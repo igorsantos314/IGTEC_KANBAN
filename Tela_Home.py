@@ -5,6 +5,7 @@ from time import sleep
 from tkinter import font
 from typing import List
 from Persistencia import Persistencia
+from Tela_Quadro import Tela_Quadro
 from util import util
 import _thread as th
 
@@ -95,7 +96,7 @@ class Tela_Home:
         btProximoMeusQuadros = Button(self.frameMeusQuadros, image=imagem_proximo, bd=0, height=110, width=30, bg=self.color_contrast)
         btProximoMeusQuadros.image = imagem_proximo
         btProximoMeusQuadros.place(x=800, y=0)
-
+        
         # -- QUADROS COMPARTILHADOS --
         lblQuadrosCompartilhados = Label(self.windowMain, text='Quadros Compartilhados', font=self.font_titulo, bg=self.color_contrast)
         lblQuadrosCompartilhados.place(x=10, y=320)
@@ -114,27 +115,45 @@ class Tela_Home:
         btProximoCompartilhados.place(x=800, y=0)
 
         self.adicionarMeusQuadros()
-        self.adicionarCompartilhados()
+        #self.adicionarCompartilhados()
 
         self.windowMain.mainloop()
 
     def adicionarMeusQuadros(self):
+        #POSIÇÃO INICIAL
         posx = 40
-        for i in range(4):
-            frameMiniQuadro = Frame(self.frameMeusQuadros, bg=self.color_theme, width=180, height=90)
-            frameMiniQuadro.place(x=posx, y=10)
-            
-            frameFaixa = Frame(frameMiniQuadro, bg='Red', width=10, height=90)
-            frameFaixa.place(x=0, y=0)
 
-            lblTituloQuadro = Button(frameMiniQuadro, text='Extensão', bd=0, bg=self.color_theme, fg='White', font=self.font_usuario)
-            lblTituloQuadro.place(x=10, y=0)
-            
-            lblSubtituloQuadro = Button(frameMiniQuadro, text=self.formatSubtitulo('Projeto IFPE'), bd=0, bg=self.color_theme, fg='White', font=self.font_default)
-            lblSubtituloQuadro.place(x=10, y=30)
+        for board in Persistencia("igorsantos314").getBoards():
+            #print(board)
+            self.createQuadro(posx, board)
 
+            #ESPAÇAMENTO ENTRE QUADROS
             posx += 190
 
+    def abrirQuadro(self, board):
+
+        #APAGAR JANELA
+        self.windowMain.destroy()
+    
+        #ABRIR
+        Tela_Quadro('igorsantos314', board)
+
+    def createQuadro(self, posx, board):
+
+        #FRAME PRINCIPAL
+        frameMiniQuadro = Frame(self.frameMeusQuadros, bg=self.color_theme, width=180, height=90)
+        frameMiniQuadro.place(x=posx, y=10)
+        
+        #FRAME DA BARRA LATERAL COLORIDA
+        frameFaixa = Frame(frameMiniQuadro, bg=board["Color"], width=10, height=90)
+        frameFaixa.place(x=0, y=0)
+        
+        btTituloQuadro = Button(frameMiniQuadro, text=board["Titulo"], bd=0, bg=self.color_theme, fg='White', font=self.font_usuario, command=lambda: self.abrirQuadro(board))
+        btTituloQuadro.place(x=10, y=0)
+        
+        lblSubtituloQuadro = Label(frameMiniQuadro, text=self.formatSubtitulo(board["Subtitulo"]), bd=0, bg=self.color_theme, fg='White', font=self.font_default)
+        lblSubtituloQuadro.place(x=15, y=45)
+        
     def adicionarCompartilhados(self):
         posx = 40
         for i in range(4):
