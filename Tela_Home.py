@@ -53,7 +53,7 @@ class Tela_Home:
 
         lblBemVindo = Label(self.windowMain, text='Bem vindo,', font=self.font_default, bg=self.color_contrast)
         lblBemVindo.place(x=70, y=5)
-
+        
         self.lblUsuario = Label(self.windowMain, text='Igor Santos', font=self.font_usuario, bg=self.color_contrast)
         self.lblUsuario.place(x=70, y=30)
 
@@ -116,8 +116,6 @@ class Tela_Home:
         btProximoCompartilhados.place(x=800, y=0)
 
         self.adicionarMeusQuadros()
-
-        beautiful_message(self.windowMain).ask("wait", "Abrir Quadro", print)
 
         self.windowMain.mainloop()
 

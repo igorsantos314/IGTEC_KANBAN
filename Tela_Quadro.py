@@ -5,9 +5,10 @@ from time import sleep
 from tkinter import font
 from typing import List
 from Persistencia import Persistencia
-from Tela_Nova_Tarefa import Nova_Tarefa
 from util import util
 import _thread as th
+from beautiful_message import beautiful_message
+
 
 class Tela_Quadro:
     
@@ -48,6 +49,9 @@ class Tela_Quadro:
         self.windowQuadro['bg'] = 'White'
         self.windowQuadro.title("IGTEC - BOARD")
         self.windowQuadro.resizable(False, False)
+
+        #OBEJTOS PARA MENSAGENS
+        self.msg = beautiful_message(self.windowQuadro)
 
         # --- INFORMAÇÕES DO QUADRO ---
         self.frameMiniQuadro = Frame(self.windowQuadro, bg=self.color_theme, width=925, height=90)
@@ -287,7 +291,93 @@ class Tela_Quadro:
         self.windowQuadro.destroy()
 
     def novaTarefa(self):
-        Nova_Tarefa(self.usuario, self.board['Titulo'])
+        self.frameNovaTarefa = Frame(self.windowQuadro, bg='White', width=430, height=270)
+        self.frameNovaTarefa.pack(pady=120)
+        #self.frameNovaTarefa.place(x=10, y=20)
+        self.frameNovaTarefa.grab_set()
+
+        #TITULO
+        lblTitulo = Label(self.frameNovaTarefa, text='NOVA TAREFA', font=self.font_titulo, bg='White')
+        lblTitulo.place(x=120, y=20)
+
+        #ATIVIDADE
+        lblAtividade = Label(self.frameNovaTarefa, text='Atividade:', font=self.font_default_labels, bg='White')
+        lblAtividade.place(x=10, y=80)
+
+        etAtividade = Entry(self.frameNovaTarefa, font=self.font_default_labels, width=40)
+        etAtividade.place(x=10, y=110)
+
+        #DATA
+        lblData = Label(self.frameNovaTarefa, text='Data:', font=self.font_default_labels, bg='White')
+        lblData.place(x=10, y=150)
+
+        etData = Entry(self.frameNovaTarefa, font=self.font_default_labels, width=10)
+        etData.insert(0, util().getData())
+        etData.place(x=10, y=180)
+
+        #PRIORIDADE
+        lblPrioridade = Label(self.frameNovaTarefa, text='Prioridade:', font=self.font_default_labels, bg='White')
+        lblPrioridade.place(x=140, y=150)
+
+        comboPrioridade = ttk.Combobox(self.frameNovaTarefa, font=self.font_default_labels, width=10, state="readonly")
+
+        comboPrioridade['values'] = tuple(
+            ['I', 'II', 'III', 'IV', 'V'])
+        comboPrioridade.current(0)
+        comboPrioridade.place(x=140, y=180)
+        
+        #COR
+        lblCor = Label(self.frameNovaTarefa, text='Cor:', font=self.font_default_labels, bg='White')
+        lblCor.place(x=290, y=150)
+
+        comboCor = ttk.Combobox(self.frameNovaTarefa, font=self.font_default_labels, width=10, state="readonly")
+
+        comboCor['values'] = tuple(
+            ['SpringGreen', 'Tomato', 'Aquamarine', 'Gray', 'Cyan'])
+        comboCor.current(0)
+        comboCor.place(x=290, y=180)
+
+        def adicionar():
+            
+            if len(etAtividade.get().replace(" ", "")) > 0:
+                
+                #SALVAR TAREFA NA COLUNA TO DO DO QUADRO ESPECIFICO
+                Persistencia(self.usuario).adicionarTarefas(
+                    self.board['Titulo'],
+                    etAtividade.get(),
+                    comboCor.get(),
+                    etData.get(),
+                    comboPrioridade.get()
+                )
+
+                th.start_new_thread(self.msg.msg, ("info", "SALVO !", ))
+
+                #FOCAR NO CAMPO DE NOVA TAREFA
+                fechar(None)
+
+                #LIMPAR OS CAMPOS
+                limpar()
+
+        def limpar():
+            etAtividade.delete(0, END)
+            etData.delete(0, END)
+
+            comboPrioridade.current(0)
+            comboCor.current(0)
+
+            etData.insert(0, util().getData())
+        
+        def fechar(event):
+            self.frameNovaTarefa.destroy()
+
+        btSalvar = Button(self.frameNovaTarefa, text='Salvar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=10, command= lambda: self.msg.ask(None, "Salvar Tarefa?", adicionar))
+        btSalvar.place(x=10, y=220)
+
+        #FOCAR NO CAMPO DE ATIVIDADE
+        etAtividade.focus_force()
+
+        #BUSCAR EVENTOS
+        self.frameNovaTarefa.bind("<Escape>", fechar)
 
     def setImagensBase64(self):
         self.imagem_usuario = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEf0lEQVR4nO3bX4hWRRjH8Y9rllC6mpoFuW1/F7GorjK7qNAu666LMrEiSiiSoIiCKItAoj8oJEEXlRFkRUFQUd3URV0UkaTZZn+3wIz1X7p2YeV2MWdxW99z3vfMnHPW8P3Cc/Ge9535Pc+cM2dmnpmXLl26dDmOmdKg1nxciAGchVk4JftuBPswhG+xFb836Fst9OAabMA3GC1p2/AslmZ1/W+Yh0fxq/JB59kvWIO5DcZRmtl4Wnicqwp8oo3gSaH7HDNMwUqhz9YV+ETbiRVNBNeOmdikucAn2lvCkzcpLMKPbRxswn7AwppjPYol2J3g9N/4Cu9ktiW7FlvfLiyuNeJxLMHBSEd/w93CSDGR07Ba6N8xdY9ooBEWib/zbzgy8SliBt6M1Nilxu4wS3yff0G5WecUvBSp9T16o6MscCj2rnyBEyM0T8KXkZqvRegVsjLSkVFcnaC7LEF3eYLuf5gtfpLzdQX6g5HaO3UwY+xkkfGQ8IaO4b3IcuN5N7LcfDyYKj4HB8Q/hqtSHcCdCfoj2iyg2j0Bq3U2dOUxklB2jD8Syp6Mu4p+UNQAPbg5QZz4rjOeMxLL36IgzqIGWIoFieKXJJaHixPL9+HKmIIbxPe9MdstjOexTMfeCvxYHyMeO/xMtHtixDPuq8iHLWWFT69IeBR7cH5ZB4Tk6b6KfDis5PtoaUXCYzao3PukT8gOV+lDyxlp3ktwoISznTCAz3BtB7+9Dp/jghp8OIoTcn7cX7E4oVu9jU/wCj4Wsr2EO34VbsLlNWjD2a0u5jXAzJqcgCsya5oZrS7mdYGU2d+xSqkGOG7Ia4Aq5vDHGgdaXcxrgP01OjJZtIwprwGGanRksvi51cW8Bhis0ZHJomVMecPgVmH2VOX5gd3YLGSWf8o+j/XLGULioh/n4FKcWqH2qIj03DZpU8+d2IgbxU2s+oXE5kbxmyXRiyHC4YSyQgczh5epdojtyep8GX9G+LUuRrRMSvpgJpKavemEeVir3PZcVEKkR5irt6v8U5wbG00CffioA/+GJDyNa9pU/lRK5RUwFc+08Gu8PZwiMFf+kZcXNXvKLI+ifcT92owm7e7eLjyX892CDso3QQ/OzPlug5CRSmKW/GHosdTKK+BxrX3bocJl/YockcO4vSqRCFZlPrTy7YaqxV7PEfoHt1Yt1gG3yQ/+1ToEe4UDSXlPwlrhrVw3U/FEjh+j2K7GjNZC4cWYJ/6+cA64LvrxYYH+sOoTukexWPFp0BHcK+zqVMV0YZOkSPcALqtQs5DFip+EUeFE2P3SVnVz8ID2i6FhDQY/xkLhQFK7qeghoWvcIWx0Tiuoc5qwoboKH+CvDurfLuGxT53J9eJ5XF+izCF8J2x77c2uzc7sPOUOVG0ShuFJT+EtFx75dnerKtuhhnE+lV5heEo5UtPO9gvDbZ0bN8nMwSPCMrSqwIeEVV2VabLa6RF2ZNc7kmPs1A5nZdYJyYzaFl1NLmfn4SJh17dPuJvj/zS1R0jAjP1parhB37p06dLl+ORfOBG/whDjMksAAAAASUVORK5CYII='

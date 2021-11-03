@@ -5,16 +5,18 @@ from time import sleep
 from tkinter import font
 from typing import List
 from Persistencia import Persistencia
+from beautiful_message import beautiful_message
 from util import util
 import _thread as th
 
 class Nova_Tarefa:
 
     def __init__(self, usuario, board_titulo) -> None:
+        
+        #TITULO DO QUADRO E USUÁRIOS
         self.board_titulo = board_titulo
         self.usuario = usuario
         
-        print(usuario, ' ', board_titulo)
         self.font_menu = 'Calibri 14 bold'
         self.font_titulo = 'Calibri 24 bold'
         self.font_msg = 'Calibri 12 bold'
@@ -26,11 +28,14 @@ class Nova_Tarefa:
 
     def window(self):
         self.windowNovaTarefa = Tk()
-        self.windowNovaTarefa.geometry(util().toCenterScreen(430, 250))
+        self.windowNovaTarefa.geometry(util().toCenterScreen(430, 270))
         #self.windowQuadro.overrideredirect(True)
         self.windowNovaTarefa['bg'] = 'White'
         self.windowNovaTarefa.title("IGTEC - NOVA TAREFA")
         self.windowNovaTarefa.resizable(False, False)
+
+        #OBEJTOS PARA MENSAGENS
+        self.msg = beautiful_message(self.windowNovaTarefa)
 
         #TITULO
         lblTitulo = Label(self.windowNovaTarefa, text='NOVA TAREFA', font=self.font_titulo, bg='White')
@@ -53,14 +58,14 @@ class Nova_Tarefa:
 
         #PRIORIDADE
         lblPrioridade = Label(self.windowNovaTarefa, text='Prioridade:', font=self.font_default_labels, bg='White')
-        lblPrioridade.place(x=150, y=150)
+        lblPrioridade.place(x=140, y=150)
 
         comboPrioridade = ttk.Combobox(self.windowNovaTarefa, font=self.font_default_labels, width=10, state="readonly")
 
         comboPrioridade['values'] = tuple(
             ['I', 'II', 'III', 'IV', 'V'])
         comboPrioridade.current(0)
-        comboPrioridade.place(x=150, y=180)
+        comboPrioridade.place(x=140, y=180)
         
         #COR
         lblCor = Label(self.windowNovaTarefa, text='Cor:', font=self.font_default_labels, bg='White')
@@ -73,9 +78,10 @@ class Nova_Tarefa:
         comboCor.current(0)
         comboCor.place(x=290, y=180)
 
-        def adicionar(event):
+        def adicionar():
             
             if len(etAtividade.get().replace(" ", "")) > 0:
+                
                 #SALVAR TAREFA NA COLUNA TO DO DO QUADRO ESPECIFICO
                 Persistencia(self.usuario).adicionarTarefas(
                     self.board_titulo,
@@ -85,7 +91,7 @@ class Nova_Tarefa:
                     comboPrioridade.get()
                 )
 
-                print('TAREFA ADICIONADA !')
+                th.start_new_thread(beautiful_message(self.windowNovaTarefa).msg, ("info", "SALVO !", ))
 
                 #LIMPAR OS CAMPOS
                 limpar()
@@ -99,9 +105,12 @@ class Nova_Tarefa:
 
             etData.insert(0, util().getData())
             
+        btSalvar = Button(self.windowNovaTarefa, text='Salvar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=10, command= lambda: self.msg.ask(None, "Salvar Tarefa?", adicionar))
+        btSalvar.place(x=10, y=220)
+
+        #FOCAR NO CAMPO DE ATIVIDADE
         etAtividade.focus_force()
-        etAtividade.bind("<Return>", adicionar)
 
         self.windowNovaTarefa.mainloop()
 
-#Nova_Tarefa('igorsantos314', 'Proj2')
+Nova_Tarefa('igorsantos314', 'Proj2')
