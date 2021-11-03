@@ -94,8 +94,11 @@ class Persistencia:
 
     def adicionarTarefas(self, board, atividade, color, data, prioridade, coluna='To do'):
         
+        id = self.getIdTarefa(board, coluna)
+
         data_tarefa = {
-            self.getIdTarefa(board, coluna):{
+            id:{
+                "Id":id,
                 "Atividade":atividade,
                 "Color":color,
                 "Data":data,
@@ -104,6 +107,14 @@ class Persistencia:
         }
 
         self.db.child(self.usuario).child(board).child(coluna).update(data_tarefa)
+
+    def excluirTarefa(self, board, coluna, id):
+        print('Excluido')
+
+        self.db.child(self.usuario).child(board).child(coluna).child(id).remove()
+
+    def salvarAlteracoes(self, board):
+        self.db.child(self.usuario).child(board['Titulo']).update(board)
 
 #print(Persistencia("igorsantos314").getBoard("Proj2"))
 #Persistencia("igorsantos314").adicionarTarefas("Proj Kanban", "Algo", "White", "02/11/2021", "IV")

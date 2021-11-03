@@ -44,6 +44,8 @@ class beautiful_message:
 
     def ask(self, type, msg, command):
         
+        print(type)
+        
         #CASO JÁ EXISTA UMA MENSAGEM
         if self.frame_msg:
             #APAGA A ATUAL
@@ -61,7 +63,7 @@ class beautiful_message:
             if type == 'wait':
                 #SUCESSO
                 th.start_new_thread(self.msg, ("wait", "AGUARDE ...", ))
-
+                
                 #EXECUTA A FUNÇÃO RECEBIDA DO BOTÃO
                 th.start_new_thread(command, ())
             

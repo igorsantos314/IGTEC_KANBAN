@@ -4,17 +4,22 @@ import base64
 from time import sleep
 from tkinter import font
 from typing import List
+
+from rsa import common
 from Persistencia import Persistencia
 from util import util
 import _thread as th
 from beautiful_message import beautiful_message
-
+import copy
 
 class Tela_Quadro:
     
     def __init__(self, usuario, board) -> None:
         
-        self.board = board
+        #print(board)
+        self.pilha_board = [copy.deepcopy(board)]
+        
+        self.board = copy.deepcopy(board)
         self.usuario = usuario
 
         self.font_menu = 'Calibri 14 bold'
@@ -45,7 +50,6 @@ class Tela_Quadro:
     def window(self):
         self.windowQuadro = Tk()
         self.windowQuadro.geometry(util().toCenterScreen(925, 600))
-        #self.windowQuadro.overrideredirect(True)
         self.windowQuadro['bg'] = 'White'
         self.windowQuadro.title("IGTEC - BOARD")
         self.windowQuadro.resizable(False, False)
@@ -112,13 +116,13 @@ class Tela_Quadro:
         self.windowQuadro.focus_force()
 
         self.windowQuadro.bind("<F5>", self.atualizarTarefas)
+        self.windowQuadro.bind("<Control-s>", self.salvar)
+        self.windowQuadro.bind("<Control-z>", self.ctrlZ)
+
         self.windowQuadro.mainloop()
 
     # -- COLUNAS --
     def atualizarTarefas(self, event):
-        #PEGA OS DADOS DO QUADRO ATUALIZADOS
-        self.board = Persistencia(self.usuario).getBoard(self.board['Titulo'])
-        
         #APAGA TUDO
         self.destroyColunas()
 
@@ -233,67 +237,119 @@ class Tela_Quadro:
         my_canvas.create_window((0,0), window=self.frameDone, anchor="nw")
 
     # -- EXIBIR POST ITS --
+    def movePostIt(self, column_atual, postit, column_destino):
+        self.adicionarMovido(
+            column_destino, 
+            postit['Atividade'],
+            postit['Color'],
+            postit['Data'],
+            postit['Prioridade'],
+        )
+
+        #print("Tarefa Movida")
+        
+        #REMOVE A TAREFA
+        self.excluirPostItMovido(column_atual, postit)
+
+        #ATUALIZA AS TAREFAS
+        self.atualizarTarefas(None)
+
+        #ADICIONAR A ALTERAÇÕES
+        self.pilha()
+
+    def excluirPostItMovido(self, column_atual, postit):
+        #VARRE O QUADRO ATÉ ENCONTRAR O ID
+        for pos, tarefa in enumerate(self.board[column_atual]):
+            if tarefa != 'Nenhum':
+                if int(tarefa['Id']) == int(postit['Id']):
+                    del self.board[column_atual][pos]
+
+        #ATUALIZA AS TAREFAS
+        self.atualizarTarefas(None)
+
+    def excluirPostIt(self, column_atual, postit):
+        #VARRE O QUADRO ATÉ ENCONTRAR O ID
+        for pos, tarefa in enumerate(self.board[column_atual]):
+            if tarefa != 'Nenhum':
+                if int(tarefa['Id']) == int(postit['Id']):
+                    del self.board[column_atual][pos]
+
+        #ATUALIZA AS TAREFAS
+        self.atualizarTarefas(None)
+
+        #ADICIONAR A ALTERAÇÕES
+        self.pilha()
+
+        #print("Tarefa excluida")
+
     def exibirPostIts(self):
+
         #POSIÇÃO INICIAL
         posx = 40
 
-        for postIt in self.board['To do'][::-1]:
+        for postIt in self.board['To do']:
             if postIt != 'Nenhum':
-                self.setPostIt(self.frameToDo, postIt)
+                self.setPostIt(self.frameToDo, 'To do', postIt)
 
         for postIt in self.board['Doing']:
             if postIt != 'Nenhum':
-                self.setPostIt(self.frameDoing, postIt)
+                self.setPostIt(self.frameDoing, 'Doing', postIt)
 
         for postIt in self.board['On Hold']:
             if postIt != 'Nenhum':
-                self.setPostIt(self.frameOnHold, postIt)
+                self.setPostIt(self.frameOnHold, 'On Hold', postIt)
 
         for postIt in self.board['Done']:
             if postIt != 'Nenhum':
-                self.setPostIt(self.frameDone, postIt)
+                self.setPostIt(self.frameDone, 'Done', postIt)
 
-    def setPostIt(self, frame, postIt):
+    def setPostIt(self, frame, column, postIt):
         #print(postIt)
 
         # -- MENU --
         def popup(event):
             menuPopup.post(event.x_root, event.y_root)
 
-        framePostIt = Frame(frame, bg=postIt['Color'], width=200, height=90)
+        framePostIt = Frame(frame, bg=self.color_theme, width=200, height=90)
         framePostIt.pack(side=TOP, pady=10, padx=5)
 
         #MENU POPUP
         menuPopup = Menu(framePostIt, font=self.font_msg, fg='Black', bg=postIt['Color'], bd=0, tearoff=0)
-        menuPopup.add_command(label="Editar", command=lambda: print(postIt))
-        menuPopup.add_command(label="Excluir", command=lambda: 'imprimir(None)')
+        menuPopup.add_command(label="To Do", command=lambda: self.movePostIt(column, postIt, 'To do'))
+        menuPopup.add_command(label="Doing", command=lambda: self.movePostIt(column, postIt, 'Doing'))
+        menuPopup.add_command(label="On Hold", command=lambda: self.movePostIt(column, postIt, 'On Hold'))
+        menuPopup.add_command(label="Done", command=lambda: self.movePostIt(column, postIt, 'Done'))
         menuPopup.add_separator()
-        menuPopup.add_command(label="Sair", command=lambda: 'editar(None)')
 
-        lblAtividade = Label(framePostIt, text=postIt['Atividade'], font=self.font_menu, bg=postIt['Color'])
-        lblAtividade.place(x=0, y=0)
+        menuPopup.add_command(label="Editar", command=lambda: print(postIt))
+        menuPopup.add_command(label="Excluir", command=lambda: self.excluirPostIt(column, postIt, ))
+
+        frFaixa = Frame(framePostIt, height=90, width=10, bg=postIt['Color'])
+        frFaixa.place(x=0, y=0)
+
+        lblAtividade = Label(framePostIt, text=postIt['Atividade'], font=self.font_menu, bg=self.color_theme, fg='White')
+        lblAtividade.place(x=20, y=0)
         
-        lblData = Label(framePostIt, text=postIt['Data'], font=self.font_default, bg=postIt['Color'])
-        lblData.place(x=0, y=30)
+        lblData = Label(framePostIt, text=postIt['Data'], font=self.font_default, bg=self.color_theme, fg='White')
+        lblData.place(x=20, y=30)
         
-        lblPrioridade = Label(framePostIt, text=postIt['Prioridade'], font=self.font_menu, bg=postIt['Color'])
-        lblPrioridade.place(x=0, y=60)
+        lblPrioridade = Label(framePostIt, text=postIt['Prioridade'], font=self.font_menu, bg=self.color_theme, fg='White')
+        lblPrioridade.place(x=20, y=60)
 
         framePostIt.bind("<Button-3>", popup)
-        
+    
     def formatSubtitulo(self, subtitilo):
         #FORMATA A STRING PARA NÃO UTRAPASSAR A QUANTIDADE DE CARACTERES
         if len(subtitilo) > 16:
             return f"{subtitilo[:16]}..."
         return subtitilo
-
+    
     def voltar(self):
         self.windowQuadro.destroy()
 
     def novaTarefa(self):
         self.frameNovaTarefa = Frame(self.windowQuadro, bg='White', width=430, height=270)
         self.frameNovaTarefa.pack(pady=120)
-        #self.frameNovaTarefa.place(x=10, y=20)
         self.frameNovaTarefa.grab_set()
 
         #TITULO
@@ -341,22 +397,34 @@ class Tela_Quadro:
             
             if len(etAtividade.get().replace(" ", "")) > 0:
                 
+                #th.start_new_thread(self.msg.ask, ("wait", "AGUARDE ...", print, ))
+
                 #SALVAR TAREFA NA COLUNA TO DO DO QUADRO ESPECIFICO
-                Persistencia(self.usuario).adicionarTarefas(
+                """Persistencia(self.usuario).adicionarTarefas(
                     self.board['Titulo'],
+                    etAtividade.get(),
+                    comboCor.get(),
+                    etData.get(),
+                    comboPrioridade.get()
+                )"""
+
+                #th.start_new_thread(self.msg.destroyMsg, (None,))
+
+                #th.start_new_thread(self.msg.msg, ("info", "SALVO !", ))
+
+                self.adicionar(
+                    'To do',
                     etAtividade.get(),
                     comboCor.get(),
                     etData.get(),
                     comboPrioridade.get()
                 )
 
-                th.start_new_thread(self.msg.msg, ("info", "SALVO !", ))
-
-                #FOCAR NO CAMPO DE NOVA TAREFA
+                #FECHA A JANELA
                 fechar(None)
 
-                #LIMPAR OS CAMPOS
-                limpar()
+                #ATUALIZAR CAMPOS
+                self.atualizarTarefas(None)
 
         def limpar():
             etAtividade.delete(0, END)
@@ -370,7 +438,7 @@ class Tela_Quadro:
         def fechar(event):
             self.frameNovaTarefa.destroy()
 
-        btSalvar = Button(self.frameNovaTarefa, text='Salvar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=10, command= lambda: self.msg.ask(None, "Salvar Tarefa?", adicionar))
+        btSalvar = Button(self.frameNovaTarefa, text='Adicionar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=10, command= adicionar)
         btSalvar.place(x=10, y=220)
 
         #FOCAR NO CAMPO DE ATIVIDADE
@@ -378,6 +446,72 @@ class Tela_Quadro:
 
         #BUSCAR EVENTOS
         self.frameNovaTarefa.bind("<Escape>", fechar)
+
+    def getIdPost(self, column_destino):
+        ultima_tarefa = self.board[column_destino][-1]
+
+        print(ultima_tarefa)
+
+        if ultima_tarefa == 'Nenhum':
+            return 1
+
+        return int(ultima_tarefa['Id']) + 1
+
+    def adicionarMovido(self, column_destino, atividade, color, data, prioridade):
+        #ADICIONAR TAREDA NO BOARD
+        self.board[column_destino].append(
+            {
+                "Id":self.getIdPost(column_destino),
+                "Atividade":atividade,
+                "Color":color,
+                "Data":data,
+                "Prioridade":prioridade               
+            }
+        )
+
+    def adicionar(self, column_destino, atividade, color, data, prioridade):
+        #ADICIONAR TAREFA NO BOARD
+        self.board[column_destino].append(
+            {
+                "Id":self.getIdPost(column_destino),
+                "Atividade":atividade,
+                "Color":color,
+                "Data":data,
+                "Prioridade":prioridade               
+            }
+        )
+
+        #ADICIONAR A ALTERAÇÕES
+        self.pilha()
+
+    def salvar(self, event):
+        print('ALTERAÇÕES SALVAS')
+
+        #SALVAR ALTERAÇÕES
+        Persistencia(self.usuario).salvarAlteracoes(self.board)
+    
+    def pilha(self):
+        self.pilha_board.append(
+            copy.deepcopy(
+                self.board
+            )
+        )
+
+    def ctrlZ(self, event):
+        #print(self.pilha_board)
+        if len(self.pilha_board) > 1:
+            
+            #VOLTA UMA AÇÃO
+            self.board = copy.deepcopy(self.pilha_board[-2])
+
+            #REMOVER DA PILHA
+            self.pilha_board.pop()
+
+            #ATUALIZA O QUADRO
+            self.atualizarTarefas(None)
+
+            #VOLTOU
+            print("VOLTOU")
 
     def setImagensBase64(self):
         self.imagem_usuario = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEf0lEQVR4nO3bX4hWRRjH8Y9rllC6mpoFuW1/F7GorjK7qNAu666LMrEiSiiSoIiCKItAoj8oJEEXlRFkRUFQUd3URV0UkaTZZn+3wIz1X7p2YeV2MWdxW99z3vfMnHPW8P3Cc/Ge9535Pc+cM2dmnpmXLl26dDmOmdKg1nxciAGchVk4JftuBPswhG+xFb836Fst9OAabMA3GC1p2/AslmZ1/W+Yh0fxq/JB59kvWIO5DcZRmtl4Wnicqwp8oo3gSaH7HDNMwUqhz9YV+ETbiRVNBNeOmdikucAn2lvCkzcpLMKPbRxswn7AwppjPYol2J3g9N/4Cu9ktiW7FlvfLiyuNeJxLMHBSEd/w93CSDGR07Ba6N8xdY9ooBEWib/zbzgy8SliBt6M1Nilxu4wS3yff0G5WecUvBSp9T16o6MscCj2rnyBEyM0T8KXkZqvRegVsjLSkVFcnaC7LEF3eYLuf5gtfpLzdQX6g5HaO3UwY+xkkfGQ8IaO4b3IcuN5N7LcfDyYKj4HB8Q/hqtSHcCdCfoj2iyg2j0Bq3U2dOUxklB2jD8Syp6Mu4p+UNQAPbg5QZz4rjOeMxLL36IgzqIGWIoFieKXJJaHixPL9+HKmIIbxPe9MdstjOexTMfeCvxYHyMeO/xMtHtixDPuq8iHLWWFT69IeBR7cH5ZB4Tk6b6KfDis5PtoaUXCYzao3PukT8gOV+lDyxlp3ktwoISznTCAz3BtB7+9Dp/jghp8OIoTcn7cX7E4oVu9jU/wCj4Wsr2EO34VbsLlNWjD2a0u5jXAzJqcgCsya5oZrS7mdYGU2d+xSqkGOG7Ia4Aq5vDHGgdaXcxrgP01OjJZtIwprwGGanRksvi51cW8Bhis0ZHJomVMecPgVmH2VOX5gd3YLGSWf8o+j/XLGULioh/n4FKcWqH2qIj03DZpU8+d2IgbxU2s+oXE5kbxmyXRiyHC4YSyQgczh5epdojtyep8GX9G+LUuRrRMSvpgJpKavemEeVir3PZcVEKkR5irt6v8U5wbG00CffioA/+GJDyNa9pU/lRK5RUwFc+08Gu8PZwiMFf+kZcXNXvKLI+ifcT92owm7e7eLjyX892CDso3QQ/OzPlug5CRSmKW/GHosdTKK+BxrX3bocJl/YockcO4vSqRCFZlPrTy7YaqxV7PEfoHt1Yt1gG3yQ/+1ToEe4UDSXlPwlrhrVw3U/FEjh+j2K7GjNZC4cWYJ/6+cA64LvrxYYH+sOoTukexWPFp0BHcK+zqVMV0YZOkSPcALqtQs5DFip+EUeFE2P3SVnVz8ID2i6FhDQY/xkLhQFK7qeghoWvcIWx0Tiuoc5qwoboKH+CvDurfLuGxT53J9eJ5XF+izCF8J2x77c2uzc7sPOUOVG0ShuFJT+EtFx75dnerKtuhhnE+lV5heEo5UtPO9gvDbZ0bN8nMwSPCMrSqwIeEVV2VabLa6RF2ZNc7kmPs1A5nZdYJyYzaFl1NLmfn4SJh17dPuJvj/zS1R0jAjP1parhB37p06dLl+ORfOBG/whDjMksAAAAASUVORK5CYII='
