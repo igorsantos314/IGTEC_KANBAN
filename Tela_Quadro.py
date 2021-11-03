@@ -5,6 +5,7 @@ from time import sleep
 from tkinter import font
 from typing import List
 from Persistencia import Persistencia
+from Tela_Nova_Tarefa import Nova_Tarefa
 from util import util
 import _thread as th
 
@@ -13,6 +14,7 @@ class Tela_Quadro:
     def __init__(self, usuario, board) -> None:
         
         self.board = board
+        self.usuario = usuario
 
         self.font_menu = 'Calibri 14 bold'
         self.font_titulo = 'Calibri 24 bold'
@@ -42,7 +44,7 @@ class Tela_Quadro:
     def window(self):
         self.windowQuadro = Tk()
         self.windowQuadro.geometry(util().toCenterScreen(925, 600))
-        self.windowQuadro.overrideredirect(True)
+        #self.windowQuadro.overrideredirect(True)
         self.windowQuadro['bg'] = 'White'
         self.windowQuadro.title("IGTEC - BOARD")
         self.windowQuadro.resizable(False, False)
@@ -68,7 +70,7 @@ class Tela_Quadro:
         
         #MENU POPUP
         self.menuPopup = Menu(self.windowQuadro, font=self.font_default, fg='Black', bg='White', bd=0, tearoff=0)
-        self.menuPopup.add_command(label="Novo Atividade", command=lambda: 'editar(None)')
+        self.menuPopup.add_command(label="Novo Atividade", command=lambda: self.novaTarefa())
         self.menuPopup.add_separator()
         self.menuPopup.add_command(label="Voltar", command=lambda: self.voltar())
         
@@ -98,18 +100,40 @@ class Tela_Quadro:
         lblDone = Label(self.frameDivisoes, text='Done', font=self.font_titulo, bg='White', width=width_colunas)
         lblDone.pack(side=LEFT)
 
+        #CRIAR COLUNAS E EXIBIR TAREFAS
+        self.createColunas()
+        self.exibirPostIts()
+        
+        #FOCAR NA TELA
+        self.windowQuadro.focus_force()
+
+        self.windowQuadro.bind("<F5>", self.atualizarTarefas)
+        self.windowQuadro.mainloop()
+
+    # -- COLUNAS --
+    def atualizarTarefas(self, event):
+        #PEGA OS DADOS DO QUADRO ATUALIZADOS
+        self.board = Persistencia(self.usuario).getBoard(self.board['Titulo'])
+        
+        #APAGA TUDO
+        self.destroyColunas()
+
+        #RECONSTROI
+        self.createColunas()
+        self.exibirPostIts()
+
+    def createColunas(self):
         # -- LINHAS DA DIVISÕES --
         self.createFrameToDo()
         self.createFrameDoing()
         self.createFrameOnHold()
         self.createFrameDone()
-        
-        #FOCAR NA TELA
-        self.windowQuadro.focus_force()
 
-        self.exibirPostIts()
-
-        self.windowQuadro.mainloop()
+    def destroyColunas(self):
+        self.frameToDo.destroy()
+        self.frameDoing.destroy()
+        self.frameOnHold.destroy()
+        self.frameDone.destroy()
 
     # -- CRIAÇÃO DE FRAMES --
     def createFrameToDo(self):
@@ -204,27 +228,43 @@ class Tela_Quadro:
 
         my_canvas.create_window((0,0), window=self.frameDone, anchor="nw")
 
+    # -- EXIBIR POST ITS --
     def exibirPostIts(self):
         #POSIÇÃO INICIAL
         posx = 40
 
-        for postIt in self.board['To do']:
-            self.setPostIt(self.frameToDo, postIt)
+        for postIt in self.board['To do'][::-1]:
+            if postIt != 'Nenhum':
+                self.setPostIt(self.frameToDo, postIt)
 
         for postIt in self.board['Doing']:
-            self.setPostIt(self.frameDoing, postIt)
+            if postIt != 'Nenhum':
+                self.setPostIt(self.frameDoing, postIt)
 
         for postIt in self.board['On Hold']:
-            self.setPostIt(self.frameOnHold, postIt)
+            if postIt != 'Nenhum':
+                self.setPostIt(self.frameOnHold, postIt)
 
         for postIt in self.board['Done']:
-            self.setPostIt(self.frameDone, postIt)
+            if postIt != 'Nenhum':
+                self.setPostIt(self.frameDone, postIt)
 
     def setPostIt(self, frame, postIt):
         #print(postIt)
 
+        # -- MENU --
+        def popup(event):
+            menuPopup.post(event.x_root, event.y_root)
+
         framePostIt = Frame(frame, bg=postIt['Color'], width=200, height=90)
         framePostIt.pack(side=TOP, pady=10, padx=5)
+
+        #MENU POPUP
+        menuPopup = Menu(framePostIt, font=self.font_msg, fg='Black', bg=postIt['Color'], bd=0, tearoff=0)
+        menuPopup.add_command(label="Editar", command=lambda: print(postIt))
+        menuPopup.add_command(label="Excluir", command=lambda: 'imprimir(None)')
+        menuPopup.add_separator()
+        menuPopup.add_command(label="Sair", command=lambda: 'editar(None)')
 
         lblAtividade = Label(framePostIt, text=postIt['Atividade'], font=self.font_menu, bg=postIt['Color'])
         lblAtividade.place(x=0, y=0)
@@ -235,6 +275,8 @@ class Tela_Quadro:
         lblPrioridade = Label(framePostIt, text=postIt['Prioridade'], font=self.font_menu, bg=postIt['Color'])
         lblPrioridade.place(x=0, y=60)
 
+        framePostIt.bind("<Button-3>", popup)
+        
     def formatSubtitulo(self, subtitilo):
         #FORMATA A STRING PARA NÃO UTRAPASSAR A QUANTIDADE DE CARACTERES
         if len(subtitilo) > 16:
@@ -243,6 +285,9 @@ class Tela_Quadro:
 
     def voltar(self):
         self.windowQuadro.destroy()
+
+    def novaTarefa(self):
+        Nova_Tarefa(self.usuario, self.board['Titulo'])
 
     def setImagensBase64(self):
         self.imagem_usuario = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEf0lEQVR4nO3bX4hWRRjH8Y9rllC6mpoFuW1/F7GorjK7qNAu666LMrEiSiiSoIiCKItAoj8oJEEXlRFkRUFQUd3URV0UkaTZZn+3wIz1X7p2YeV2MWdxW99z3vfMnHPW8P3Cc/Ge9535Pc+cM2dmnpmXLl26dDmOmdKg1nxciAGchVk4JftuBPswhG+xFb836Fst9OAabMA3GC1p2/AslmZ1/W+Yh0fxq/JB59kvWIO5DcZRmtl4Wnicqwp8oo3gSaH7HDNMwUqhz9YV+ETbiRVNBNeOmdikucAn2lvCkzcpLMKPbRxswn7AwppjPYol2J3g9N/4Cu9ktiW7FlvfLiyuNeJxLMHBSEd/w93CSDGR07Ba6N8xdY9ooBEWib/zbzgy8SliBt6M1Nilxu4wS3yff0G5WecUvBSp9T16o6MscCj2rnyBEyM0T8KXkZqvRegVsjLSkVFcnaC7LEF3eYLuf5gtfpLzdQX6g5HaO3UwY+xkkfGQ8IaO4b3IcuN5N7LcfDyYKj4HB8Q/hqtSHcCdCfoj2iyg2j0Bq3U2dOUxklB2jD8Syp6Mu4p+UNQAPbg5QZz4rjOeMxLL36IgzqIGWIoFieKXJJaHixPL9+HKmIIbxPe9MdstjOexTMfeCvxYHyMeO/xMtHtixDPuq8iHLWWFT69IeBR7cH5ZB4Tk6b6KfDis5PtoaUXCYzao3PukT8gOV+lDyxlp3ktwoISznTCAz3BtB7+9Dp/jghp8OIoTcn7cX7E4oVu9jU/wCj4Wsr2EO34VbsLlNWjD2a0u5jXAzJqcgCsya5oZrS7mdYGU2d+xSqkGOG7Ia4Aq5vDHGgdaXcxrgP01OjJZtIwprwGGanRksvi51cW8Bhis0ZHJomVMecPgVmH2VOX5gd3YLGSWf8o+j/XLGULioh/n4FKcWqH2qIj03DZpU8+d2IgbxU2s+oXE5kbxmyXRiyHC4YSyQgczh5epdojtyep8GX9G+LUuRrRMSvpgJpKavemEeVir3PZcVEKkR5irt6v8U5wbG00CffioA/+GJDyNa9pU/lRK5RUwFc+08Gu8PZwiMFf+kZcXNXvKLI+ifcT92owm7e7eLjyX892CDso3QQ/OzPlug5CRSmKW/GHosdTKK+BxrX3bocJl/YockcO4vSqRCFZlPrTy7YaqxV7PEfoHt1Yt1gG3yQ/+1ToEe4UDSXlPwlrhrVw3U/FEjh+j2K7GjNZC4cWYJ/6+cA64LvrxYYH+sOoTukexWPFp0BHcK+zqVMV0YZOkSPcALqtQs5DFip+EUeFE2P3SVnVz8ID2i6FhDQY/xkLhQFK7qeghoWvcIWx0Tiuoc5qwoboKH+CvDurfLuGxT53J9eJ5XF+izCF8J2x77c2uzc7sPOUOVG0ShuFJT+EtFx75dnerKtuhhnE+lV5heEo5UtPO9gvDbZ0bN8nMwSPCMrSqwIeEVV2VabLa6RF2ZNc7kmPs1A5nZdYJyYzaFl1NLmfn4SJh17dPuJvj/zS1R0jAjP1parhB37p06dLl+ORfOBG/whDjMksAAAAASUVORK5CYII='

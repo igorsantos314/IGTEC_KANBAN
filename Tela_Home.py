@@ -6,6 +6,7 @@ from tkinter import font
 from typing import List
 from Persistencia import Persistencia
 from Tela_Quadro import Tela_Quadro
+from beautiful_message import beautiful_message
 from util import util
 import _thread as th
 
@@ -115,7 +116,8 @@ class Tela_Home:
         btProximoCompartilhados.place(x=800, y=0)
 
         self.adicionarMeusQuadros()
-        #self.adicionarCompartilhados()
+
+        beautiful_message(self.windowMain).ask("wait", "Abrir Quadro", print)
 
         self.windowMain.mainloop()
 

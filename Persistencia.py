@@ -28,6 +28,20 @@ class Persistencia:
 
         return len(service_id)
 
+    def getIdTarefa(self, board, coluna):
+        tarefa_id = self.db.child(self.usuario).child(board).child(coluna).get().each()
+
+        if tarefa_id == None:
+            return 0
+
+        return len(tarefa_id)
+
+    def existTarefa(self, board, coluna, atividade):
+        #PEGA OS TIPO DO FIREBASE
+        if self.db.child(self.usuario).child(board).child(coluna).child(atividade).get().each():
+            return True
+        return False
+
     def existUsuario(self):
         #PEGA OS TIPO DO FIREBASE
         if self.db.child(self.usuario).get().each():
@@ -65,49 +79,34 @@ class Persistencia:
 
         #RETORNA A LISTA DOS TIPOS DE SERVIÇOS
         return [board.val() for board in list_boards]
-
-    def insertServico(self, nome, endereco, contato, data, hora, categoria, subcategoria1, subcategoria2, valor_servico, valor_material, desconto, pagamento, obs):
-        #PEGA O ULTIMO ID
-        id = self.getId()
-
-        # ADIDIONA VALOR NO DICIONÁRIO
-        data_service = {
-            'id': id,
-            'nome': nome,
-            'endereco': endereco,
-            'contato': contato,
-            'data': data,
-            'hora': hora,
-            'categoria': categoria,
-            'subcategoria1': subcategoria1,
-            'subcategoria2': subcategoria2,
-            'valor_servico': valor_servico,
-            'valor_material': valor_material,
-            'desconto': desconto,
-            'pagamento': pagamento,
-            'obs': obs
-            }
-
-        # SALVAR NO DICIONARIO
-        self.db.child("Servicos").child(id).set(data_service)
-
-    def getTipoServicos(self):
+    
+    def getBoard(self, board):
         #PEGA OS TIPO DO FIREBASE
-        list_tipos_servicos = self.db.child("TipoServicos").get().each()
+        current_board = self.db.child(self.usuario).child(board).get().each()
 
-        #RETORNA A LISTA DOS TIPOS DE SERVIÇOS
-        return [tipo.val() for tipo in list_tipos_servicos]
+        data_board = {}
 
-    def getSubcategorias(self, categoria):
-        #PEGA AS SUBCATEGORIAS DO FIREBASE
-        list_subcategorias = self.db.child("Subcategoria1").child(categoria).get().each()
+        for i in current_board:
+            data_board[i.key()] = i.val()
 
-        if list_subcategorias == None:
-            return []
+        #RETORNA A LISTA DE TODAS AS TAREFAS
+        return data_board
 
-        #RETORNA A LISTA DE SUBCATEGORIAS
-        return [tipo.val() for tipo in list_subcategorias]
+    def adicionarTarefas(self, board, atividade, color, data, prioridade, coluna='To do'):
+        
+        data_tarefa = {
+            self.getIdTarefa(board, coluna):{
+                "Atividade":atividade,
+                "Color":color,
+                "Data":data,
+                "Prioridade":prioridade               
+            }
+        }
 
+        self.db.child(self.usuario).child(board).child(coluna).update(data_tarefa)
+
+#print(Persistencia("igorsantos314").getBoard("Proj2"))
+#Persistencia("igorsantos314").adicionarTarefas("Proj Kanban", "Algo", "White", "02/11/2021", "IV")
 #Persistencia("igorsantos314").createBoard("Proj Kanban", "Quadro kanban", "Yellow")
 #Persistencia("igorsantos314").createBoard("Proj2", "Sensor Solo", "Red")
 
