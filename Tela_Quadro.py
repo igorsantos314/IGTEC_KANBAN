@@ -15,6 +15,9 @@ class Tela_Quadro:
     
     def __init__(self, usuario, board) -> None:
         
+        self.tituloWindow = "IGTEC - BOARD"
+        self.tituloWindowAviso = f"{self.tituloWindow} *"
+
         #print(board)
         self.pilha_board = [copy.deepcopy(board)]
         
@@ -50,7 +53,7 @@ class Tela_Quadro:
         self.windowQuadro = Tk()
         self.windowQuadro.geometry(util().toCenterScreen(925, 600))
         self.windowQuadro['bg'] = 'White'
-        self.windowQuadro.title("IGTEC - BOARD")
+        self.windowQuadro.title(self.tituloWindow)
         self.windowQuadro.resizable(False, False)
 
         #OBEJTOS PARA MENSAGENS
@@ -317,10 +320,20 @@ class Tela_Quadro:
 
         #MENU POPUP
         menuPopup = Menu(framePostIt, font=self.font_msg, fg='Black', bg=postIt['Color'], bd=0, tearoff=0)
-        menuPopup.add_command(label="To Do", command=lambda: self.movePostIt(column, postIt, 'To do'))
-        menuPopup.add_command(label="Doing", command=lambda: self.movePostIt(column, postIt, 'Doing'))
-        menuPopup.add_command(label="On Hold", command=lambda: self.movePostIt(column, postIt, 'On Hold'))
-        menuPopup.add_command(label="Done", command=lambda: self.movePostIt(column, postIt, 'Done'))
+
+        # -- EXIBE A OPÇÃO DE MUDAR PARA A COLUNA QUE NÃO ESTÁ --
+        if column != "To do":
+            menuPopup.add_command(label="To Do", command=lambda: self.movePostIt(column, postIt, 'To do'))
+        
+        if column != "Doing":
+            menuPopup.add_command(label="Doing", command=lambda: self.movePostIt(column, postIt, 'Doing'))
+        
+        if column != "On Hold":
+            menuPopup.add_command(label="On Hold", command=lambda: self.movePostIt(column, postIt, 'On Hold'))
+        
+        if column != "Done":
+            menuPopup.add_command(label="Done", command=lambda: self.movePostIt(column, postIt, 'Done'))
+
         menuPopup.add_separator()
 
         menuPopup.add_command(label="Editar", command=lambda: print(postIt))
@@ -329,7 +342,7 @@ class Tela_Quadro:
         frFaixa = Frame(framePostIt, height=90, width=10, bg=postIt['Color'])
         frFaixa.place(x=0, y=0)
 
-        lblAtividade = Label(framePostIt, text=postIt['Atividade'], font=self.font_menu, bg=self.color_theme, fg='White')
+        lblAtividade = Label(framePostIt, text=self.formatSubtitulo(postIt['Atividade']), font=self.font_menu, bg=self.color_theme, fg='White')
         lblAtividade.place(x=20, y=0)
         
         lblData = Label(framePostIt, text=postIt['Data'], font=self.font_default, bg=self.color_theme, fg='White')
@@ -338,8 +351,12 @@ class Tela_Quadro:
         lblPrioridade = Label(framePostIt, text=postIt['Prioridade'], font=self.font_menu, bg=self.color_theme, fg='White')
         lblPrioridade.place(x=20, y=60)
 
+        def abrir(event):
+            print(postIt)
+            
         framePostIt.bind("<Button-3>", popup)
-    
+        framePostIt.bind("<Double-Button-1>", abrir)
+
     def formatSubtitulo(self, subtitilo):
         #FORMATA A STRING PARA NÃO UTRAPASSAR A QUANTIDADE DE CARACTERES
         if len(subtitilo) > 16:
@@ -408,7 +425,7 @@ class Tela_Quadro:
                 )
 
                 #FECHA A JANELA
-                fechar(None)
+                fechar()
 
                 #ATUALIZAR CAMPOS
                 self.atualizarTarefas(None)
@@ -422,17 +439,17 @@ class Tela_Quadro:
 
             etData.insert(0, util().getData())
         
-        def fechar(event):
+        def fechar():
             self.frameNovaTarefa.destroy()
 
-        btSalvar = Button(self.frameNovaTarefa, text='Adicionar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=10, command= adicionar)
+        btSalvar = Button(self.frameNovaTarefa, text='Adicionar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= adicionar)
         btSalvar.place(x=10, y=220)
+
+        btSalvar = Button(self.frameNovaTarefa, text='Fechar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= fechar)
+        btSalvar.place(x=120, y=220)
 
         #FOCAR NO CAMPO DE ATIVIDADE
         etAtividade.focus_force()
-
-        #BUSCAR EVENTOS
-        self.frameNovaTarefa.bind("<Escape>", fechar)
 
     def getIdPost(self, column_destino):
         ultima_tarefa = self.board[column_destino][-1]
@@ -475,15 +492,22 @@ class Tela_Quadro:
         #SALVAR ALTERAÇÕES
         Persistencia(self.usuario).salvarAlteracoes(self.board)
 
+        #AVISAR QUE SALVOU
+        self.avisoWindow('Salvo')
+
         #th.start_new_thread(self.msg.destroyMsg, (None,))
         self.msg.msg("info", "ALTERAÇÕES FORAM SALVAS !")
 
     def pilha(self):
+        #ADICIONAR EVENTO NA PILHA
         self.pilha_board.append(
             copy.deepcopy(
                 self.board
             )
         )
+
+        #AVISAR QUE NÃO SALVOU
+        self.avisoWindow('Pilha')
 
     def ctrlZ(self, event):
         #print(self.pilha_board)
@@ -501,13 +525,17 @@ class Tela_Quadro:
             #VOLTOU
             print("VOLTOU")
 
+    def avisoWindow(self, event):
+
+        if event == 'Pilha':
+            #AVISAR QUE AS ALTERAÇÕES NÃO FORAM SALVAS
+            self.windowQuadro.title(self.tituloWindowAviso)
+
+        elif event == 'Salvo':
+            #RETIRAR AVISO DO TITULO DA JANELA
+            self.windowQuadro.title(self.tituloWindow)
+
     def setImagensBase64(self):
-        self.imagem_usuario = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEf0lEQVR4nO3bX4hWRRjH8Y9rllC6mpoFuW1/F7GorjK7qNAu666LMrEiSiiSoIiCKItAoj8oJEEXlRFkRUFQUd3URV0UkaTZZn+3wIz1X7p2YeV2MWdxW99z3vfMnHPW8P3Cc/Ge9535Pc+cM2dmnpmXLl26dDmOmdKg1nxciAGchVk4JftuBPswhG+xFb836Fst9OAabMA3GC1p2/AslmZ1/W+Yh0fxq/JB59kvWIO5DcZRmtl4Wnicqwp8oo3gSaH7HDNMwUqhz9YV+ETbiRVNBNeOmdikucAn2lvCkzcpLMKPbRxswn7AwppjPYol2J3g9N/4Cu9ktiW7FlvfLiyuNeJxLMHBSEd/w93CSDGR07Ba6N8xdY9ooBEWib/zbzgy8SliBt6M1Nilxu4wS3yff0G5WecUvBSp9T16o6MscCj2rnyBEyM0T8KXkZqvRegVsjLSkVFcnaC7LEF3eYLuf5gtfpLzdQX6g5HaO3UwY+xkkfGQ8IaO4b3IcuN5N7LcfDyYKj4HB8Q/hqtSHcCdCfoj2iyg2j0Bq3U2dOUxklB2jD8Syp6Mu4p+UNQAPbg5QZz4rjOeMxLL36IgzqIGWIoFieKXJJaHixPL9+HKmIIbxPe9MdstjOexTMfeCvxYHyMeO/xMtHtixDPuq8iHLWWFT69IeBR7cH5ZB4Tk6b6KfDis5PtoaUXCYzao3PukT8gOV+lDyxlp3ktwoISznTCAz3BtB7+9Dp/jghp8OIoTcn7cX7E4oVu9jU/wCj4Wsr2EO34VbsLlNWjD2a0u5jXAzJqcgCsya5oZrS7mdYGU2d+xSqkGOG7Ia4Aq5vDHGgdaXcxrgP01OjJZtIwprwGGanRksvi51cW8Bhis0ZHJomVMecPgVmH2VOX5gd3YLGSWf8o+j/XLGULioh/n4FKcWqH2qIj03DZpU8+d2IgbxU2s+oXE5kbxmyXRiyHC4YSyQgczh5epdojtyep8GX9G+LUuRrRMSvpgJpKavemEeVir3PZcVEKkR5irt6v8U5wbG00CffioA/+GJDyNa9pU/lRK5RUwFc+08Gu8PZwiMFf+kZcXNXvKLI+ifcT92owm7e7eLjyX892CDso3QQ/OzPlug5CRSmKW/GHosdTKK+BxrX3bocJl/YockcO4vSqRCFZlPrTy7YaqxV7PEfoHt1Yt1gG3yQ/+1ToEe4UDSXlPwlrhrVw3U/FEjh+j2K7GjNZC4cWYJ/6+cA64LvrxYYH+sOoTukexWPFp0BHcK+zqVMV0YZOkSPcALqtQs5DFip+EUeFE2P3SVnVz8ID2i6FhDQY/xkLhQFK7qeghoWvcIWx0Tiuoc5qwoboKH+CvDurfLuGxT53J9eJ5XF+izCF8J2x77c2uzc7sPOUOVG0ShuFJT+EtFx75dnerKtuhhnE+lV5heEo5UtPO9gvDbZ0bN8nMwSPCMrSqwIeEVV2VabLa6RF2ZNc7kmPs1A5nZdYJyYzaFl1NLmfn4SJh17dPuJvj/zS1R0jAjP1parhB37p06dLl+ORfOBG/whDjMksAAAAASUVORK5CYII='
-        
         self.imagem_menu = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABkUlEQVR4nO3awS5DQRTG8W+wrETtxLpWZUsEb8QzEI/gpTSSEu2KrdhhwVL7t2g0chW3qTkj+v22Pcl89yQ393RmJDMzM7MAwAFwBbzy2StwCeyXzpkFsAo8TXjwqkegGZVrIWohSduSVmrUNSXtZM4yFtmARqbamUQ24E9yA0oHKM0NCFzrforau2wpSgGWgE6NOeAcWIrKlaIWkiSgIelQ0pakxcrPA0nXks5SSi+RuczMzOZU6BwgScCGpLYmzwH9lNJNdKYwwCkw/GYKHAInpXNmAWz88PAfm9CKyhX5Z6iteq9ckrSZOctYZAOq7/xv1c7E+wGlA5TmBgSuNchUO5PIBvQlUaMOSb3MWcoATmoMQseRmUqMwi2NvvOTRuFeSuk2OpOZmdmcij4aW5Z0pK+3xHoaHY09R+YKwehw9KLGjlCHwMPRMMBejYd/txuVK/LP0NoUtevZUlR4P6B0gNLcgNIBSotswDTXXv7fFRlGl6Ufa3wCHwi8LB0K2Ae6fH1dvgvslc5pZmZm8+EN6vTRQDQnGnkAAAAASUVORK5CYII='
-        self.imagem_kanban = 'iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAB8ElEQVR4nO3cS07DMBSF4cNjCyyEWTpjdyyIQTtjwmJYBTCoLEWiVZrUN8fX/j/JwxTnHLt5IJAAAAAAAAAwiif3BDY6SHqR9O2eyGgmSR+SfiV9mucylHnw8/HmnNQIrgVfBrsgyFLw7IIga4JnF1S0JXh2QQUHSSdtD76M970nnt29K76ML7H6VyF4E4I3IXiTSdJR9wd/0vlCXdtB0mvA59q1vuK7fZeUKfj5SP+1ljX4MtLuguzBp94FNS6uR51Dqm3Lk3W6XZB9xaffBdlX/KWR6l1SDys+en6hnCt+Up0VH/WAF3HO/yydXFTwLT9Zz+cXbukka2r9q6bM70cx53/RHgVkDL6LAjIHn7qAHoJPWUBPwacqoMfg0xTQ8rukGre74e6dQG8rfogCMgTfZQGZgu+qgIzBd1NAqxfXYQqoaY8VTwEXOIKnAHmDH7qAFoIfsoCWgh+qgBaDH6aAvW4ndyngYe0BN/yQpc+MPt5tVaaPUbPAbSjAjALMKMCMAsyeNxyz5c4JV7ADzCjAjALMKMCMAswowIwCzCjAjALMKKCuk3sCt4j+jZpjpPxz163cYQ8bfOEOfdjgC4I3I3gzgjcjeDOCNyN4M4I3I3gzgjcjeDOCNyN4M4I3I3gzgjcjeLNd/jkqAADo3B8+s2MH7cXf0gAAAABJRU5ErkJggg=='
-        
-        self.imagem_anterior = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAh0lEQVRoge3TwQkCMQBE0Y81LFqWJ+3RPVmWYhFagdmAsDPgf5BzhvADkvQPrsB7cG65adsW4Mn38S/gGFs3YWX8+pfctG2mk2Q6KaaTZDpJppNiOkmmk1SRzmGPS1otwINxQqfYuklnxhndc9PmVfyFX5hSC1NqYEoNTKmFKTUwpQamJEm9PohoFvqTHhZTAAAAAElFTkSuQmCC'
-        self.imagem_proximo = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAk0lEQVRoge3TsQ3CMBgF4RMNC0QwFhXsCBVjgZggFZkgjoUi3m/pPimVmxf5DJI0ugfwbXzX3LQ+E/Bi/Qc+wDm2rtOF9i08c9P6mVIFplSBKVVhShWYUgWmVIUpVbB7Soc913U4bpzPf1nxowl4007oFFvXYehHfKM9/p6bts10kkwnyXRSTCfJdJJMJ8V0JGlcC8O+F/rzPPmjAAAAAElFTkSuQmCC'
 
 #Tela_Quadro('igorsantos314',{'Color': 'Red', 'Doing': ['Nenhum'], 'Done': ['Nenhum'], 'On Hold': ['Nenhum'], 'Subtitulo': 'Sensor Solo', 'Titulo': 'Proj2', 'To do': ['Nenhum']})
