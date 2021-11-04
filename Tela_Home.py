@@ -5,6 +5,7 @@ from time import sleep
 from tkinter import font
 from typing import List
 from Persistencia import Persistencia
+from Tela_Novo_Quadro import Tela_Novo_Quadro
 from Tela_Quadro import Tela_Quadro
 from beautiful_message import beautiful_message
 from util import util
@@ -72,7 +73,7 @@ class Tela_Home:
         
         #MENU POPUP
         self.menuPopup = Menu(self.windowMain, font=self.font_default, fg='Black', bg='White', bd=0, tearoff=0)
-        self.menuPopup.add_command(label="Novo Quadro", command=lambda: 'editar(None)')
+        self.menuPopup.add_command(label="Novo Quadro", command=lambda: self.novoQuadro())
         self.menuPopup.add_command(label="Novo Quadro Compartilhado", command=lambda: 'imprimir(None)')
         self.menuPopup.add_separator()
         self.menuPopup.add_command(label="Sair", command=lambda: 'editar(None)')
@@ -122,11 +123,21 @@ class Tela_Home:
 
         self.windowMain.mainloop()
 
+    def novoQuadro(self):
+        #FECHAR JANELA
+        self.windowMain.destroy()
+
+        #ABRIR JANELA DE CRIAR NOVO QUADRO
+        Tela_Novo_Quadro(self.usuario)
+
+        #REABRE A TELA NOVAMENTE
+        Tela_Home(self.usuario)
+
     def adicionarMeusQuadros(self):
         #POSIÇÃO INICIAL
         posx = 40
 
-        for board in Persistencia("igorsantos314").getBoards():
+        for board in Persistencia(self.usuario).getBoards():
 
             #IGNORA LOGIN E SENHA
             if "Senha" not in board:
@@ -140,8 +151,11 @@ class Tela_Home:
         #APAGAR JANELA
         self.windowMain.destroy()
         
-        #ABRIR
+        #ABRIR QUADRO
         Tela_Quadro(self.usuario, board)
+
+        #REABRIR A JANELA
+        Tela_Home(self.usuario)
 
     def createQuadro(self, posx, board):
         #FRAME PRINCIPAL
@@ -181,4 +195,4 @@ class Tela_Home:
         self.imagem_anterior = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAh0lEQVRoge3TwQkCMQBE0Y81LFqWJ+3RPVmWYhFagdmAsDPgf5BzhvADkvQPrsB7cG65adsW4Mn38S/gGFs3YWX8+pfctG2mk2Q6KaaTZDpJppNiOkmmk1SRzmGPS1otwINxQqfYuklnxhndc9PmVfyFX5hSC1NqYEoNTKmFKTUwpQamJEm9PohoFvqTHhZTAAAAAElFTkSuQmCC'
         self.imagem_proximo = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAk0lEQVRoge3TsQ3CMBgF4RMNC0QwFhXsCBVjgZggFZkgjoUi3m/pPimVmxf5DJI0ugfwbXzX3LQ+E/Bi/Qc+wDm2rtOF9i08c9P6mVIFplSBKVVhShWYUgWmVIUpVbB7Soc913U4bpzPf1nxowl4007oFFvXYehHfKM9/p6bts10kkwnyXRSTCfJdJJMJ8V0JGlcC8O+F/rzPPmjAAAAAElFTkSuQmCC'
 
-Tela_Home('igorsantos314')
+#Tela_Home('test123')

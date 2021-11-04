@@ -1,9 +1,8 @@
 from tkinter import *
 from tkinter import ttk
-import base64
-from time import sleep
 from tkinter import font
 from typing import List
+import base64
 
 from rsa import common
 from Persistencia import Persistencia
@@ -118,6 +117,9 @@ class Tela_Quadro:
         self.windowQuadro.bind("<F5>", self.atualizarTarefas)
         self.windowQuadro.bind("<Control-s>", self.salvar)
         self.windowQuadro.bind("<Control-z>", self.ctrlZ)
+        
+        #FOCAR NA JANELA DE QUADROS
+        self.windowQuadro.focus_force()
 
         self.windowQuadro.mainloop()
 
@@ -396,21 +398,6 @@ class Tela_Quadro:
         def adicionar():
             
             if len(etAtividade.get().replace(" ", "")) > 0:
-                
-                #th.start_new_thread(self.msg.ask, ("wait", "AGUARDE ...", print, ))
-
-                #SALVAR TAREFA NA COLUNA TO DO DO QUADRO ESPECIFICO
-                """Persistencia(self.usuario).adicionarTarefas(
-                    self.board['Titulo'],
-                    etAtividade.get(),
-                    comboCor.get(),
-                    etData.get(),
-                    comboPrioridade.get()
-                )"""
-
-                #th.start_new_thread(self.msg.destroyMsg, (None,))
-
-                #th.start_new_thread(self.msg.msg, ("info", "SALVO !", ))
 
                 self.adicionar(
                     'To do',
@@ -485,11 +472,12 @@ class Tela_Quadro:
         self.pilha()
 
     def salvar(self, event):
-        print('ALTERAÇÕES SALVAS')
-
         #SALVAR ALTERAÇÕES
         Persistencia(self.usuario).salvarAlteracoes(self.board)
-    
+
+        #th.start_new_thread(self.msg.destroyMsg, (None,))
+        self.msg.msg("info", "ALTERAÇÕES FORAM SALVAS !")
+
     def pilha(self):
         self.pilha_board.append(
             copy.deepcopy(

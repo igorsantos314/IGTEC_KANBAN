@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import font
 from Persistencia import Persistencia
 from Tela_Home import Tela_Home
+from beautiful_message import beautiful_message
 from util import util
 
 class Tela_Login:
@@ -22,6 +23,9 @@ class Tela_Login:
         self.windowLogin.title("IGTEC - Login")
         self.windowLogin['bg'] = 'White'
         self.windowLogin.geometry(util().toCenterScreen(350, 400))
+
+        #OBJETO DE MESAGENS
+        self.msg = beautiful_message(self.windowLogin)
 
         #POSIÇÃO DO EIXO X COMUM
         posX = 70
@@ -60,7 +64,13 @@ class Tela_Login:
 
                 #ABRE A TELA DE QUADROS ENVIANDO O USUÁRIO
                 Tela_Home(usuario)
-                
+            
+            else:
+                self.msg.msg("error", "Senha ou Usuário Incorretos !")
+        
+        #FOCAR NO CAMPO DE USUÁRIO
+        etUsuario.focus_force()
+        
         self.windowLogin.mainloop()
 
 Tela_Login()
