@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import font
+from Persistencia import Persistencia
+from Tela_Home import Tela_Home
 from util import util
 
 class Tela_Login:
@@ -30,15 +32,35 @@ class Tela_Login:
         lblUsuario = Label(self.windowLogin, text='Usuário:', font=self.font_default, bg='White')
         lblUsuario.place(x=posX, y=120)
         
-        etUsuario = Entry(self.windowLogin, font=self.font_default)
+        etUsuario = Entry(self.windowLogin, font=self.font_menu)
         etUsuario.place(x=posX, y=150)
 
         lblSenha = Label(self.windowLogin, text='Senha:', font=self.font_default, bg='White')
         lblSenha.place(x=posX, y=190)
 
-        etSenha = Entry(self.windowLogin, font=self.font_default)
+        etSenha = Entry(self.windowLogin, show='*', font=self.font_menu)
         etSenha.place(x=posX, y=220)
 
+        btEntrar = Button(self.windowLogin, text='Entrar', font=self.font_menu, bd=0, fg='White', bg='DodgerBlue', width=20, command=lambda: login())
+        btEntrar.place(x=posX, y=290)
+
+        btNovoUsuario = Button(self.windowLogin, text='Novo Usuário', font=self.font_menu, bd=0, fg='White', bg='DeepSkyBlue', width=20)
+        btNovoUsuario.place(x=posX, y=330)
+
+        def login():
+            
+            usuario = etUsuario.get()
+            senha = etSenha.get()
+
+            #VALIDA O LOGIN
+            if Persistencia(usuario).login(senha):
+                
+                #FECHAR LOGIN
+                self.windowLogin.destroy()
+
+                #ABRE A TELA DE QUADROS ENVIANDO O USUÁRIO
+                Tela_Home(usuario)
+                
         self.windowLogin.mainloop()
 
 Tela_Login()

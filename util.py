@@ -101,8 +101,7 @@ class util:
         except:
             return False
     
-#print(util().validateData("31/12/2021"))
-
+#print(util().cifrar("13579"))
 """for i in range(50500):
     print(i)
     u.generateLog("TESTE [TESTE] TESTE [TESTE] TESTE [TESTE]", "INFO")"""    

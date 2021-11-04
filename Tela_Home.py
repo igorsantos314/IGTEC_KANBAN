@@ -12,7 +12,10 @@ import _thread as th
 
 class Tela_Home:
     
-    def __init__(self) -> None:
+    def __init__(self, usuario) -> None:
+        
+        #USUARIO LOGADO
+        self.usuario = usuario
 
         self.font_menu = 'Calibri 14 bold'
         self.font_titulo = 'Calibri 24 bold'
@@ -54,7 +57,7 @@ class Tela_Home:
         lblBemVindo = Label(self.windowMain, text='Bem vindo,', font=self.font_default, bg=self.color_contrast)
         lblBemVindo.place(x=70, y=5)
         
-        self.lblUsuario = Label(self.windowMain, text='Igor Santos', font=self.font_usuario, bg=self.color_contrast)
+        self.lblUsuario = Label(self.windowMain, text=self.usuario, font=self.font_usuario, bg=self.color_contrast)
         self.lblUsuario.place(x=70, y=30)
 
         # -- TITULO --
@@ -124,11 +127,13 @@ class Tela_Home:
         posx = 40
 
         for board in Persistencia("igorsantos314").getBoards():
-            #print(board)
-            self.createQuadro(posx, board)
 
-            #ESPAÇAMENTO ENTRE QUADROS
-            posx += 190
+            #IGNORA LOGIN E SENHA
+            if "Senha" not in board:
+                self.createQuadro(posx, board)
+
+                #ESPAÇAMENTO ENTRE QUADROS
+                posx += 190
 
     def abrirQuadro(self, board):
 
@@ -136,10 +141,9 @@ class Tela_Home:
         self.windowMain.destroy()
         
         #ABRIR
-        Tela_Quadro('igorsantos314', board)
+        Tela_Quadro(self.usuario, board)
 
     def createQuadro(self, posx, board):
-
         #FRAME PRINCIPAL
         frameMiniQuadro = Frame(self.frameMeusQuadros, bg=self.color_theme, width=180, height=90)
         frameMiniQuadro.place(x=posx, y=10)
@@ -167,7 +171,7 @@ class Tela_Home:
         if len(subtitilo) > 16:
             return f"{subtitilo[:16]}..."
         return subtitilo
-        
+
     def setImagensBase64(self):
         self.imagem_usuario = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEf0lEQVR4nO3bX4hWRRjH8Y9rllC6mpoFuW1/F7GorjK7qNAu666LMrEiSiiSoIiCKItAoj8oJEEXlRFkRUFQUd3URV0UkaTZZn+3wIz1X7p2YeV2MWdxW99z3vfMnHPW8P3Cc/Ge9535Pc+cM2dmnpmXLl26dDmOmdKg1nxciAGchVk4JftuBPswhG+xFb836Fst9OAabMA3GC1p2/AslmZ1/W+Yh0fxq/JB59kvWIO5DcZRmtl4Wnicqwp8oo3gSaH7HDNMwUqhz9YV+ETbiRVNBNeOmdikucAn2lvCkzcpLMKPbRxswn7AwppjPYol2J3g9N/4Cu9ktiW7FlvfLiyuNeJxLMHBSEd/w93CSDGR07Ba6N8xdY9ooBEWib/zbzgy8SliBt6M1Nilxu4wS3yff0G5WecUvBSp9T16o6MscCj2rnyBEyM0T8KXkZqvRegVsjLSkVFcnaC7LEF3eYLuf5gtfpLzdQX6g5HaO3UwY+xkkfGQ8IaO4b3IcuN5N7LcfDyYKj4HB8Q/hqtSHcCdCfoj2iyg2j0Bq3U2dOUxklB2jD8Syp6Mu4p+UNQAPbg5QZz4rjOeMxLL36IgzqIGWIoFieKXJJaHixPL9+HKmIIbxPe9MdstjOexTMfeCvxYHyMeO/xMtHtixDPuq8iHLWWFT69IeBR7cH5ZB4Tk6b6KfDis5PtoaUXCYzao3PukT8gOV+lDyxlp3ktwoISznTCAz3BtB7+9Dp/jghp8OIoTcn7cX7E4oVu9jU/wCj4Wsr2EO34VbsLlNWjD2a0u5jXAzJqcgCsya5oZrS7mdYGU2d+xSqkGOG7Ia4Aq5vDHGgdaXcxrgP01OjJZtIwprwGGanRksvi51cW8Bhis0ZHJomVMecPgVmH2VOX5gd3YLGSWf8o+j/XLGULioh/n4FKcWqH2qIj03DZpU8+d2IgbxU2s+oXE5kbxmyXRiyHC4YSyQgczh5epdojtyep8GX9G+LUuRrRMSvpgJpKavemEeVir3PZcVEKkR5irt6v8U5wbG00CffioA/+GJDyNa9pU/lRK5RUwFc+08Gu8PZwiMFf+kZcXNXvKLI+ifcT92owm7e7eLjyX892CDso3QQ/OzPlug5CRSmKW/GHosdTKK+BxrX3bocJl/YockcO4vSqRCFZlPrTy7YaqxV7PEfoHt1Yt1gG3yQ/+1ToEe4UDSXlPwlrhrVw3U/FEjh+j2K7GjNZC4cWYJ/6+cA64LvrxYYH+sOoTukexWPFp0BHcK+zqVMV0YZOkSPcALqtQs5DFip+EUeFE2P3SVnVz8ID2i6FhDQY/xkLhQFK7qeghoWvcIWx0Tiuoc5qwoboKH+CvDurfLuGxT53J9eJ5XF+izCF8J2x77c2uzc7sPOUOVG0ShuFJT+EtFx75dnerKtuhhnE+lV5heEo5UtPO9gvDbZ0bN8nMwSPCMrSqwIeEVV2VabLa6RF2ZNc7kmPs1A5nZdYJyYzaFl1NLmfn4SJh17dPuJvj/zS1R0jAjP1parhB37p06dLl+ORfOBG/whDjMksAAAAASUVORK5CYII='
         
@@ -177,4 +181,4 @@ class Tela_Home:
         self.imagem_anterior = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAh0lEQVRoge3TwQkCMQBE0Y81LFqWJ+3RPVmWYhFagdmAsDPgf5BzhvADkvQPrsB7cG65adsW4Mn38S/gGFs3YWX8+pfctG2mk2Q6KaaTZDpJppNiOkmmk1SRzmGPS1otwINxQqfYuklnxhndc9PmVfyFX5hSC1NqYEoNTKmFKTUwpQamJEm9PohoFvqTHhZTAAAAAElFTkSuQmCC'
         self.imagem_proximo = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAk0lEQVRoge3TsQ3CMBgF4RMNC0QwFhXsCBVjgZggFZkgjoUi3m/pPimVmxf5DJI0ugfwbXzX3LQ+E/Bi/Qc+wDm2rtOF9i08c9P6mVIFplSBKVVhShWYUgWmVIUpVbB7Soc913U4bpzPf1nxowl4007oFFvXYehHfKM9/p6bts10kkwnyXRSTCfJdJJMJ8V0JGlcC8O+F/rzPPmjAAAAAElFTkSuQmCC'
 
-Tela_Home()
+Tela_Home('igorsantos314')

@@ -1,5 +1,7 @@
 import pyrebase
 
+from util import util
+
 class Persistencia:
 
     def __init__(self, usuario):
@@ -20,12 +22,24 @@ class Persistencia:
         firebase = pyrebase.initialize_app(self.config_kanban_board)
         self.db = firebase.database()
 
+    def login(self, senha):
+
+        if self.existUsuario():
+            #PEGA A SENHA DO SISTEMA
+            senha_usario = self.db.child(self.usuario).child('Login').get().each()
+            
+            #VERIFICA A SENHA
+            if senha_usario[0].val() == util().cifrar(senha):
+                return True
+                
+            return False
+        
     def getId(self):
         service_id = self.db.child(self.usuario).get().each()
 
         if service_id == None:
             return 0
-
+            
         return len(service_id)
 
     def getIdTarefa(self, board, coluna):
@@ -47,6 +61,22 @@ class Persistencia:
         if self.db.child(self.usuario).get().each():
             return True
         return False
+
+    def createUsuario(self, senha):
+        #VERIFICA SE O USUÁRIO AINDA NÃO EXISTE
+        if not self.existUsuario():
+            #DADOS DO NOVO USUÁRIO
+            data_user = {
+                "Login":
+                    {
+                        "Usuario": self.usuario,
+                        "Senha": util().cifrar(senha)
+                    }
+            }
+
+            self.db.child(self.usuario).set(
+                data_user
+            )
 
     def createBoard(self, titulo, subtitulo, color):
         
@@ -109,13 +139,15 @@ class Persistencia:
         self.db.child(self.usuario).child(board).child(coluna).update(data_tarefa)
 
     def excluirTarefa(self, board, coluna, id):
-        print('Excluido')
-
         self.db.child(self.usuario).child(board).child(coluna).child(id).remove()
 
     def salvarAlteracoes(self, board):
         self.db.child(self.usuario).child(board['Titulo']).update(board)
-
+        
+#print(Persistencia("test123").login("987"))
+#Persistencia("igorsantos314").getLogin('')
+#Persistencia("test123").createBoard("Zz", "Redes", "Cyan")
+#Persistencia("test123").createUsuario("987")
 #print(Persistencia("igorsantos314").getBoard("Proj2"))
 #Persistencia("igorsantos314").adicionarTarefas("Proj Kanban", "Algo", "White", "02/11/2021", "IV")
 #Persistencia("igorsantos314").createBoard("Proj Kanban", "Quadro kanban", "Yellow")
