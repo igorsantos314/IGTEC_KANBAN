@@ -16,7 +16,7 @@ class Tela_Quadro:
     def __init__(self, usuario, board) -> None:
         
         self.tituloWindow = "IGTEC - BOARD"
-        self.tituloWindowAviso = f"{self.tituloWindow} *"
+        self.tituloWindowAviso = f" * {self.tituloWindow}"
 
         #print(board)
         self.pilha_board = [copy.deepcopy(board)]
@@ -48,7 +48,7 @@ class Tela_Quadro:
         self.new_setor = None
 
         self.window()
-    
+        
     def window(self):
         self.windowQuadro = Tk()
         self.windowQuadro.geometry(util().toCenterScreen(925, 600))
@@ -81,6 +81,8 @@ class Tela_Quadro:
         #MENU POPUP
         self.menuPopup = Menu(self.windowQuadro, font=self.font_default, fg='Black', bg='White', bd=0, tearoff=0)
         self.menuPopup.add_command(label="Novo Atividade", command=lambda: self.novaTarefa())
+        self.menuPopup.add_separator()
+        self.menuPopup.add_command(label="Excluir Quadro", command=lambda: th.start_new_thread(self.msg.ask, (None, "APAGAR QUADRO ?", self.excluirQuadro)))
         self.menuPopup.add_separator()
         self.menuPopup.add_command(label="Voltar", command=lambda: self.voltar())
         
@@ -549,6 +551,14 @@ class Tela_Quadro:
 
             #VOLTOU
             print("VOLTOU")
+
+    def excluirQuadro(self):
+
+        #EXCLUI O QUADRO
+        Persistencia(self.usuario).excluirQuadro(self.board['Titulo'])
+
+        #FECHA A JANELA
+        self.voltar()
 
     def avisoWindow(self, event):
 

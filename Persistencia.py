@@ -147,6 +147,9 @@ class Persistencia:
     def excluirTarefa(self, board, coluna, id):
         self.db.child(self.usuario).child(board).child(coluna).child(id).remove()
 
+    def excluirQuadro(self, board):
+        self.db.child(self.usuario).child(board).remove()
+
     def salvarAlteracoes(self, board):
         self.db.child(self.usuario).child(board['Titulo']).update(board)
         

@@ -71,8 +71,11 @@ class beautiful_message:
                 #EXECUTA O COMANDO EM SERIE
                 command()
 
-            #DESTROI O FRAME
-            self.frame_msg.destroy()
+            try:
+                #DESTROI O FRAME
+                self.frame_msg.destroy()
+            except:
+                pass
 
         #EXIBE A MENSAGEM
         lblMsg = Label(self.frame_msg, text=msg, font=self.font_msg, bg=self.color_ask, fg=self.color_contrast)

@@ -76,7 +76,7 @@ class Tela_Home:
         self.menuPopup.add_command(label="Novo Quadro", command=lambda: self.novoQuadro())
         self.menuPopup.add_command(label="Novo Quadro Compartilhado", command=lambda: 'imprimir(None)')
         self.menuPopup.add_separator()
-        self.menuPopup.add_command(label="Sair", command=lambda: 'editar(None)')
+        self.menuPopup.add_command(label="Sair", command=lambda: self.windowMain.destroy())
         
         imagem_menu = PhotoImage(data=base64.b64decode(self.imagem_menu))
         btMenu = Button(self.windowMain, image=imagem_menu, bd=0, height=60, width=30, bg=self.color_contrast)
