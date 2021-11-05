@@ -162,7 +162,7 @@ class Tela_Quadro:
 
         my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
         my_scrollbar.pack(side=RIGHT, fill=Y)
-
+        
         my_canvas.configure(yscrollcommand=my_scrollbar.set)
         my_canvas.bind('<Configure>', lambda e:my_canvas.configure(scrollregion=my_canvas.bbox("all")))
 
@@ -367,7 +367,10 @@ class Tela_Quadro:
         self.windowQuadro.destroy()
 
     def novaTarefa(self):
-        self.frameNovaTarefa = Frame(self.windowQuadro, bg='White', width=430, height=270)
+
+        self.colorTarefa = 'Black'
+
+        self.frameNovaTarefa = Frame(self.windowQuadro, bg='White', width=430, height=370)
         self.frameNovaTarefa.pack(pady=120)
         self.frameNovaTarefa.grab_set()
 
@@ -402,15 +405,20 @@ class Tela_Quadro:
         comboPrioridade.place(x=140, y=180)
         
         #COR
-        lblCor = Label(self.frameNovaTarefa, text='Cor:', font=self.font_default_labels, bg='White')
-        lblCor.place(x=290, y=150)
+        lblCor = Label(self.frameNovaTarefa, text='Cor da Tarefa:', font=self.font_default_labels, bg='White')
+        lblCor.place(x=10, y=220)
 
-        comboCor = ttk.Combobox(self.frameNovaTarefa, font=self.font_default_labels, width=10, state="readonly")
+        #LISTA DE BOTOES
+        self.listaBotoesCores = []
 
-        comboCor['values'] = tuple(
-            ['SpringGreen', 'Tomato', 'Aquamarine', 'Gray', 'Cyan'])
-        comboCor.current(0)
-        comboCor.place(x=290, y=180)
+        #CRIAR PALETA DE CORES
+        posX = 10
+        for indice, cor in enumerate(util().getColors()):
+            #CRIA CADA BOTÃO COM A COR 
+            self.createBotaoCor(indice, posX, cor)
+
+            #ESPAÇAMENTO DE 50 ENTRE OS BOTOES
+            posX += 50
 
         def adicionar():
             
@@ -419,7 +427,7 @@ class Tela_Quadro:
                 self.adicionar(
                     'To do',
                     etAtividade.get(),
-                    comboCor.get(),
+                    self.colorTarefa,
                     etData.get(),
                     comboPrioridade.get()
                 )
@@ -429,27 +437,44 @@ class Tela_Quadro:
 
                 #ATUALIZAR CAMPOS
                 self.atualizarTarefas(None)
-
-        def limpar():
-            etAtividade.delete(0, END)
-            etData.delete(0, END)
-
-            comboPrioridade.current(0)
-            comboCor.current(0)
-
-            etData.insert(0, util().getData())
         
         def fechar():
             self.frameNovaTarefa.destroy()
 
         btSalvar = Button(self.frameNovaTarefa, text='Adicionar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= adicionar)
-        btSalvar.place(x=10, y=220)
+        btSalvar.place(x=10, y=320)
 
         btSalvar = Button(self.frameNovaTarefa, text='Fechar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= fechar)
-        btSalvar.place(x=120, y=220)
+        btSalvar.place(x=120, y=320)
 
         #FOCAR NO CAMPO DE ATIVIDADE
         etAtividade.focus_force()
+
+    def createBotaoCor(self, indice, posX, cor):
+
+        def limparSelecao():
+            #LIMPA QUALQUER BOTÃO SELECIONADO
+            for bt in self.listaBotoesCores:
+                bt['bd'] = 0
+
+        def selecionarCor():
+            #LIMPA AS SELEÇÕES
+            limparSelecao()
+
+            #MUDA A BORDA DO BOTAO SELECIONADO
+            self.listaBotoesCores[indice]['bd'] = 2
+
+            #SELECIONA A COR APERTADA
+            self.colorTarefa = cor
+
+        #BOTAO COM A COR
+        btCor = Button(self.frameNovaTarefa, bg=cor, bd=0, width=5, height=2, command=lambda: selecionarCor())
+        btCor.place(x=posX, y=250)
+
+        #ADICIONAR O BOTAO DE COR NA LISTA
+        self.listaBotoesCores.append(
+            btCor
+        )
 
     def getIdPost(self, column_destino):
         ultima_tarefa = self.board[column_destino][-1]

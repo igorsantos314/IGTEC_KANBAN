@@ -45,7 +45,7 @@ class Tela_Home:
 
     def window(self):
         self.windowMain = Tk()
-        self.windowMain.geometry(util().toCenterScreen(850, 532))
+        self.windowMain.geometry(util().toCenterScreen(985, 600))
         self.windowMain['bg'] = 'White'
         self.windowMain.title("IGTEC - KANBANBOARD")
         self.windowMain.resizable(False, False)
@@ -65,7 +65,7 @@ class Tela_Home:
         imagem_kanban = PhotoImage(data=base64.b64decode(self.imagem_kanban))
         self.lblKanban = Label(self.windowMain, text='IGTEC KABAN BOARD', font=self.font_titulo, image=imagem_kanban, compound=LEFT, bg=self.color_contrast)
         self.lblKanban.image = imagem_kanban
-        self.lblKanban.pack(pady=50)
+        self.lblKanban.pack(pady=40)
 
         # -- MENU --
         def popup(event):
@@ -81,45 +81,47 @@ class Tela_Home:
         imagem_menu = PhotoImage(data=base64.b64decode(self.imagem_menu))
         btMenu = Button(self.windowMain, image=imagem_menu, bd=0, height=60, width=30, bg=self.color_contrast)
         btMenu.image = imagem_menu
-        btMenu.place(x=810, y=0)
+        btMenu.place(x=950, y=0)
 
+        #BUSCAR EVENTO DE CLICK SOBRE O BOTÃO
         btMenu.bind("<Button-1>", popup)
 
         # -- MEUS QUADROS --
-        lblMeusQuadros = Label(self.windowMain, text='Meus Quadros', font=self.font_titulo, bg=self.color_contrast)
-        lblMeusQuadros.place(x=10, y=150)
+        width_frame = 960
+        height_frame = 450
 
-        self.frameMeusQuadros = Frame(self.windowMain, bg=self.color_contrast, height=110, width=830)
-        self.frameMeusQuadros.place(x=10, y=200)
-        
-        imagem_anterior = PhotoImage(data=base64.b64decode(self.imagem_anterior))
-        btAnteriorMeusQuadros = Button(self.frameMeusQuadros, image=imagem_anterior, bd=0, height=110, width=30, bg=self.color_contrast)
-        btAnteriorMeusQuadros.image = imagem_anterior
-        btAnteriorMeusQuadros.place(x=0, y=0)
+        main_frame = Frame(self.windowMain, bg='White', width=width_frame, height=height_frame)
+        main_frame.place(x=0, y=144)
 
-        imagem_proximo = PhotoImage(data=base64.b64decode(self.imagem_proximo))
-        btProximoMeusQuadros = Button(self.frameMeusQuadros, image=imagem_proximo, bd=0, height=110, width=30, bg=self.color_contrast)
-        btProximoMeusQuadros.image = imagem_proximo
-        btProximoMeusQuadros.place(x=800, y=0)
+        my_canvas = Canvas(main_frame, bg='White', bd=0, width=width_frame, height=height_frame)
+        my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
+
+        my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
+        my_scrollbar.pack(side=RIGHT, fill=Y)
+
+        my_canvas.configure(yscrollcommand=my_scrollbar.set)
+        my_canvas.bind('<Configure>', lambda e:my_canvas.configure(scrollregion=my_canvas.bbox("all")))
+
+        self.frameMeusQuadros = Frame(my_canvas, bg=self.color_contrast, height=150, width=width_frame)
+        self.frameMeusQuadros.place(x=0, y=200)
+
+        my_canvas.create_window((0,0), window=self.frameMeusQuadros, anchor="nw")
         
+        lblMeusQuadros = Label(self.frameMeusQuadros, text='Meus Quadros', font=self.font_titulo, bg=self.color_contrast)
+        lblMeusQuadros.place(x=10, y=10)
+
+        #INCLUIR TODOS OS QUADROS NO FRAME
+        self.adicionarMeusQuadros()
+
         # -- QUADROS COMPARTILHADOS --
-        lblQuadrosCompartilhados = Label(self.windowMain, text='Quadros Compartilhados', font=self.font_titulo, bg=self.color_contrast)
+        """lblQuadrosCompartilhados = Label(self.windowMain, text='Quadros Compartilhados', font=self.font_titulo, bg=self.color_contrast)
         lblQuadrosCompartilhados.place(x=10, y=320)
 
         self.frameCompartilhados = Frame(self.windowMain, bg=self.color_contrast, height=110, width=830)
-        self.frameCompartilhados.place(x=10, y=370)
+        self.frameCompartilhados.place(x=10, y=370)"""
 
-        imagem_anterior = PhotoImage(data=base64.b64decode(self.imagem_anterior))
-        btAnteriorCompartilhados = Button(self.frameCompartilhados, image=imagem_anterior, bd=0, height=110, width=30, bg=self.color_contrast)
-        btAnteriorCompartilhados.image = imagem_anterior
-        btAnteriorCompartilhados.place(x=0, y=0)
-
-        imagem_proximo = PhotoImage(data=base64.b64decode(self.imagem_proximo))
-        btProximoCompartilhados = Button(self.frameCompartilhados, image=imagem_proximo, bd=0, height=110, width=30, bg=self.color_contrast)
-        btProximoCompartilhados.image = imagem_proximo
-        btProximoCompartilhados.place(x=800, y=0)
-
-        self.adicionarMeusQuadros()
+        #FOCAR NA JANELA
+        self.windowMain.focus_force()
 
         self.windowMain.mainloop()
 
@@ -135,16 +137,38 @@ class Tela_Home:
 
     def adicionarMeusQuadros(self):
         #POSIÇÃO INICIAL
-        posx = 40
+        posx = 10
+        posy = 60
 
-        for board in Persistencia(self.usuario).getBoards():
+        contTarefasLinha = 0
+
+        #PEGA TODOS OS QUADRO DO USUARIO
+        quadros = Persistencia(self.usuario).getBoards()
+
+        #print(len(quadros))
+        
+        #VARRE A LISTA DE QUADROS
+        for board in quadros:
 
             #IGNORA LOGIN E SENHA
             if "Senha" not in board:
-                self.createQuadro(posx, board)
+                if contTarefasLinha > 4:
 
+                    #ADICIONA O ESPAÇAMENTO DE MAIS UMA LINHA DO FRAME
+                    self.frameMeusQuadros['height'] += 100
+
+                    posx = 10
+                    posy += 100
+
+                    contTarefasLinha = 0
+
+                self.createQuadro(posx, posy, board)
+                
                 #ESPAÇAMENTO ENTRE QUADROS
                 posx += 190
+
+                #
+                contTarefasLinha += 1
 
     def abrirQuadro(self, board):
 
@@ -157,10 +181,10 @@ class Tela_Home:
         #REABRIR A JANELA
         Tela_Home(self.usuario)
 
-    def createQuadro(self, posx, board):
+    def createQuadro(self, posx, posy, board):
         #FRAME PRINCIPAL
         frameMiniQuadro = Frame(self.frameMeusQuadros, bg=self.color_theme, width=180, height=90)
-        frameMiniQuadro.place(x=posx, y=10)
+        frameMiniQuadro.place(x=posx, y=posy)
         
         #FRAME DA BARRA LATERAL COLORIDA
         frameFaixa = Frame(frameMiniQuadro, bg=board["Color"], width=10, height=90)
@@ -195,4 +219,4 @@ class Tela_Home:
         self.imagem_anterior = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAh0lEQVRoge3TwQkCMQBE0Y81LFqWJ+3RPVmWYhFagdmAsDPgf5BzhvADkvQPrsB7cG65adsW4Mn38S/gGFs3YWX8+pfctG2mk2Q6KaaTZDpJppNiOkmmk1SRzmGPS1otwINxQqfYuklnxhndc9PmVfyFX5hSC1NqYEoNTKmFKTUwpQamJEm9PohoFvqTHhZTAAAAAElFTkSuQmCC'
         self.imagem_proximo = 'iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAk0lEQVRoge3TsQ3CMBgF4RMNC0QwFhXsCBVjgZggFZkgjoUi3m/pPimVmxf5DJI0ugfwbXzX3LQ+E/Bi/Qc+wDm2rtOF9i08c9P6mVIFplSBKVVhShWYUgWmVIUpVbB7Soc913U4bpzPf1nxowl4007oFFvXYehHfKM9/p6bts10kkwnyXRSTCfJdJJMJ8V0JGlcC8O+F/rzPPmjAAAAAElFTkSuQmCC'
 
-Tela_Home('test123')
+Tela_Home('igorsantos314')

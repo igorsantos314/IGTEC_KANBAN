@@ -1617,3 +1617,952 @@
 11/04/2021 07:12:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
 11/04/2021 07:12:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
 11/04/2021 07:12:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 680 
+11/04/2021 07:15:40 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:15:40 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:15:41 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 680 
+11/04/2021 07:15:54 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:15:54 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:15:54 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /test123/proj%20de%20software.json HTTP/1.1" 200 586 
+11/04/2021 07:16:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:16:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:16:36 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /test123/proj%20de%20software.json HTTP/1.1" 200 678 
+11/04/2021 07:16:45 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:16:45 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:16:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 772 
+11/04/2021 07:17:36 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:17:36 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:17:36 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 772 
+11/04/2021 07:18:00 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:18:00 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:18:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 772 
+11/04/2021 07:18:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /test123.json HTTP/1.1" 200 174 
+11/04/2021 07:18:02 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:18:02 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:18:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 945 
+11/04/2021 07:18:36 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:18:36 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:18:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /test123/Testando%2054321.json HTTP/1.1" 200 580 
+11/04/2021 07:18:39 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:18:39 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:18:40 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:28:22 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:28:22 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:28:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:28:34 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:28:34 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:28:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:32:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:32:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:32:28 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:32:37 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:32:37 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:32:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:33:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:33:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:33:19 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:33:44 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:33:44 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:33:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:33:57 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:33:57 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:33:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:34:04 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:34:04 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:34:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:34:31 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:34:31 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:34:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:34:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:34:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:34:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:34:53 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:34:53 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:34:54 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:35:05 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:35:05 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:35:07 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:36:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:36:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:36:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:38:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:38:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:38:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:38:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:38:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:38:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:39:20 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:39:20 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:39:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:39:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:39:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:39:36 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:40:55 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:40:55 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:40:56 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:41:08 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:41:08 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:41:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:42:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:42:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:42:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:42:45 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:42:45 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:42:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:43:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:43:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:43:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:45:45 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:45:45 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:45:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:45:56 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:45:56 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:45:56 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:46:09 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:46:09 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:46:10 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:46:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:46:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:46:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:49:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:49:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:49:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:49:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:49:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:49:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:49:50 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:49:50 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:49:51 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:49:57 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:49:57 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:49:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:54:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:54:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:54:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:54:52 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:54:52 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:54:53 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:55:02 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:55:02 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:55:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:55:39 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:55:39 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:55:40 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:55:56 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:55:56 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:55:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:57:02 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:57:02 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:57:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1370 
+11/04/2021 07:57:09 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:57:09 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:57:09 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /test123/proj%20de%20software.json HTTP/1.1" 200 678 
+11/04/2021 07:57:41 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:57:41 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:57:41 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /test123/proj%20de%20software.json HTTP/1.1" 200 762 
+11/04/2021 07:57:44 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:57:44 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:57:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 07:59:25 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:59:25 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:59:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 07:59:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:59:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:59:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 07:59:45 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 07:59:45 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 07:59:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 08:00:23 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:00:23 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:00:23 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 08:04:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:04:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:04:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1030 
+11/04/2021 08:04:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 171 
+11/04/2021 08:06:09 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:06:09 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:06:10 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1200 
+11/04/2021 08:06:10 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 178 
+11/04/2021 08:06:29 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:06:29 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:06:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 08:06:41 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:06:41 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:06:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:06:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314/Login.json HTTP/1.1" 200 70 
+11/04/2021 08:06:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:06:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:06:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:07:27 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:07:27 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:07:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:11:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:11:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:11:07 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 08:11:19 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:11:19 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:11:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 08:11:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:11:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:11:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:11:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314/Login.json HTTP/1.1" 200 70 
+11/04/2021 08:11:34 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:11:34 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:11:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:11:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:11:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:12:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /test123.json HTTP/1.1" 200 1454 
+11/04/2021 08:12:19 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:12:19 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:12:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:12:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:12:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:12:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:13:10 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:13:10 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:13:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:13:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:13:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:13:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:14:06 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:14:06 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:14:07 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:14:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:14:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:14:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1377 
+11/04/2021 08:14:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 151 
+11/04/2021 08:14:29 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:14:29 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:14:29 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:17:21 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:17:21 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:17:21 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:17:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:17:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:17:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:18:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:18:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:18:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:18:45 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:18:45 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:18:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:19:04 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:19:04 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:19:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:19:14 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:19:14 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:19:14 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:19:25 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:19:25 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:19:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:19:32 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:19:32 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:19:32 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1527 
+11/04/2021 08:20:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:20:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:20:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314/tes%2055.json HTTP/1.1" 200 382 
+11/04/2021 08:20:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:20:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:20:17 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:20:21 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:20:21 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:20:21 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:20:53 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:20:53 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:20:54 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:21:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:21:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:21:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:21:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:21:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:22:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:23:15 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:23:15 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:23:16 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:23:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:23:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:23:36 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:23:41 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:23:41 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:23:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:23:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:23:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:23:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:23:55 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:23:55 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:23:56 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:24:02 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:24:02 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:24:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:24:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:24:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:24:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:24:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:24:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:24:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:26:38 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:26:38 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:26:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:26:57 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:26:57 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:26:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:27:08 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:27:08 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:27:09 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:27:51 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:27:51 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:27:51 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:27:57 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:27:57 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:27:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1769 
+11/04/2021 08:27:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:28:03 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:28:03 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:28:04 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1899 
+11/04/2021 08:28:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:28:10 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:28:10 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:28:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 1899 
+11/04/2021 08:28:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:28:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:28:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:28:17 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2029 
+11/04/2021 08:28:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 144 
+11/04/2021 08:28:22 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:28:22 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:28:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:28:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 144 
+11/04/2021 08:28:25 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:28:25 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:28:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:29:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:29:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:29:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:29:52 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:29:52 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:29:53 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:29:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:29:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:30:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:30:27 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:30:27 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:30:28 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:30:36 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:30:36 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:30:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:30:52 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:30:52 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:30:53 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:30:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:30:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:30:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:31:21 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:31:21 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:31:22 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:31:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:31:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:31:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:32:24 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:32:24 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:32:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:32:37 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:32:37 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:32:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:32:47 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:32:47 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:32:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:32:51 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:32:51 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:32:52 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:32:54 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:32:54 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:32:55 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:33:23 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:33:23 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:33:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:34:05 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:05 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:06 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2172 
+11/04/2021 08:34:06 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 141 
+11/04/2021 08:34:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2312 
+11/04/2021 08:34:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 143 
+11/04/2021 08:34:24 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:24 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2454 
+11/04/2021 08:34:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 153 
+11/04/2021 08:34:34 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:34 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2606 
+11/04/2021 08:34:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 137 
+11/04/2021 08:34:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2742 
+11/04/2021 08:34:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 139 
+11/04/2021 08:34:49 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:49 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:50 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 2880 
+11/04/2021 08:34:50 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 140 
+11/04/2021 08:34:52 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:34:52 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:34:52 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3019 
+11/04/2021 08:35:11 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:35:11 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:35:12 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3019 
+11/04/2021 08:35:12 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 140 
+11/04/2021 08:35:18 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:35:18 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:35:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3158 
+11/04/2021 08:35:19 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 140 
+11/04/2021 08:35:23 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:35:23 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:35:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3158 
+11/04/2021 08:35:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 141 
+11/04/2021 08:35:36 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:35:36 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:35:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:35:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 141 
+11/04/2021 08:35:41 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:35:41 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:35:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:36:11 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:36:11 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:36:12 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:36:27 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:36:27 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:36:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:36:39 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:36:39 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:36:40 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:37:04 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:37:04 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:37:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:37:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:37:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:37:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:37:43 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:37:43 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:37:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3159 
+11/04/2021 08:38:19 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:38:19 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:38:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:38:44 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:38:44 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:38:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:38:51 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:38:51 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:38:53 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:39:20 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:39:20 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:39:21 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:39:50 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:39:50 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:39:51 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:40:21 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:40:21 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:40:22 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:40:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:40:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:40:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:40:49 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:40:49 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:40:50 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:41:00 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:41:00 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:41:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3007 
+11/04/2021 08:41:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 142 
+11/04/2021 08:41:03 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:41:03 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:41:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:41:40 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:41:40 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:41:40 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:41:55 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:41:55 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:41:56 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:42:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:42:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:42:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:42:14 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:42:14 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:42:15 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:42:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:42:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:42:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:43:11 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:43:11 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:43:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:43:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:43:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:43:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3148 
+11/04/2021 08:43:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 135 
+11/04/2021 08:43:37 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:43:37 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:43:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3146 
+11/04/2021 08:43:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 144 
+11/04/2021 08:43:42 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:43:42 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:43:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3289 
+11/04/2021 08:43:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 141 
+11/04/2021 08:43:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:43:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:43:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3429 
+11/04/2021 08:43:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 139 
+11/04/2021 08:43:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:43:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:43:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3567 
+11/04/2021 08:44:06 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:06 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:07 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3567 
+11/04/2021 08:44:07 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 153 
+11/04/2021 08:44:11 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:11 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3719 
+11/04/2021 08:44:12 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 144 
+11/04/2021 08:44:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:14 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3862 
+11/04/2021 08:44:22 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:22 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:22 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3862 
+11/04/2021 08:44:22 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 144 
+11/04/2021 08:44:24 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:24 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:44:37 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:37 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:44:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:44:55 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:44:55 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:44:55 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:45:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:45:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:45:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:45:39 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:45:39 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:45:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:45:52 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:45:52 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:45:53 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:46:00 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:46:00 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:46:02 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:46:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:46:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:46:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:46:27 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:46:27 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:46:28 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:47:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:47:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:47:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:47:37 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:47:37 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:47:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:48:12 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:48:12 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:50:43 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:50:43 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:50:43 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:51:49 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:51:49 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:51:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:52:19 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:52:19 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:52:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:52:47 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:52:47 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:52:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:54:05 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:54:05 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:54:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:54:39 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:54:39 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:54:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4005 
+11/04/2021 08:55:38 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:55:38 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:55:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3035 
+11/04/2021 08:56:21 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:56:21 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:56:22 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3035 
+11/04/2021 08:56:23 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:56:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:56:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:56:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3165 
+11/04/2021 08:56:26 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:56:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:56:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:56:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3165 
+11/04/2021 08:56:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:56:36 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:56:36 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:56:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3295 
+11/04/2021 08:56:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 08:56:39 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:56:39 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:56:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3425 
+11/04/2021 08:56:57 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:56:57 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:56:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3425 
+11/04/2021 08:56:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 138 
+11/04/2021 08:57:00 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:00 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3562 
+11/04/2021 08:57:06 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:06 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:06 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3562 
+11/04/2021 08:57:07 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 140 
+11/04/2021 08:57:09 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:09 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:09 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3561 
+11/04/2021 08:57:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:17 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3561 
+11/04/2021 08:57:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 144 
+11/04/2021 08:57:19 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:19 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3704 
+11/04/2021 08:57:34 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:34 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3704 
+11/04/2021 08:57:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 155 
+11/04/2021 08:57:37 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:57:37 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:57:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 08:58:45 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:58:45 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:58:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 08:59:58 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 08:59:58 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 08:59:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 09:00:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:00:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:00:14 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 09:00:47 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:00:47 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:00:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 09:01:02 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:01:02 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:01:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 09:01:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:01:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:01:17 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3858 
+11/04/2021 09:01:17 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 150 
+11/04/2021 09:01:19 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:01:19 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:01:20 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4007 
+11/04/2021 09:01:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:01:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:01:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4007 
+11/04/2021 09:01:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 145 
+11/04/2021 09:01:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:01:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:01:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4151 
+11/04/2021 09:02:40 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:02:40 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:02:40 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4151 
+11/04/2021 09:03:10 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:03:10 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:03:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3166 
+11/04/2021 09:04:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:04:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:04:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3166 
+11/04/2021 09:05:01 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:05:01 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:05:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3166 
+11/04/2021 09:05:01 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:05:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:05:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:05:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3166 
+11/04/2021 09:05:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 132 
+11/04/2021 09:05:11 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:05:11 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:05:12 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3167 
+11/04/2021 09:05:12 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:05:14 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:05:14 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:05:15 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3167 
+11/04/2021 09:06:28 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:06:28 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:06:29 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3167 
+11/04/2021 09:06:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:06:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:06:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3167 
+11/04/2021 09:06:56 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:06:56 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:06:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3167 
+11/04/2021 09:06:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:06:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:06:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:07:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:07:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:07:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:07:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:07:56 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:07:56 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:07:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:14 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:28 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:28 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:29 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:38 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:38 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:08:43 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:43 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:44 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:44 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:08:47 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:47 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:48 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:08:51 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:51 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:52 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3297 
+11/04/2021 09:08:52 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:08:54 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:08:54 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:08:54 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3427 
+11/04/2021 09:09:04 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:04 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3427 
+11/04/2021 09:09:05 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:09:10 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:10 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3427 
+11/04/2021 09:09:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 133 
+11/04/2021 09:09:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3559 
+11/04/2021 09:09:26 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:26 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3559 
+11/04/2021 09:09:27 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:09:29 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:29 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:29 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3559 
+11/04/2021 09:09:44 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:44 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3559 
+11/04/2021 09:09:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 138 
+11/04/2021 09:09:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3696 
+11/04/2021 09:09:56 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:56 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:09:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3696 
+11/04/2021 09:09:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 138 
+11/04/2021 09:09:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:09:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3696 
+11/04/2021 09:10:10 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:10 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3696 
+11/04/2021 09:10:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 138 
+11/04/2021 09:10:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3833 
+11/04/2021 09:10:24 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:24 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3833 
+11/04/2021 09:10:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:10:28 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:28 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:29 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3833 
+11/04/2021 09:10:34 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:34 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3833 
+11/04/2021 09:10:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:10:36 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:36 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:37 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3833 
+11/04/2021 09:10:58 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:10:58 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:10:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3833 
+11/04/2021 09:10:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 150 
+11/04/2021 09:11:03 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:11:03 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:11:04 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 3982 
+11/04/2021 09:11:04 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 149 
+11/04/2021 09:11:10 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:11:10 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:11:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4130 
+11/04/2021 09:11:11 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 148 
+11/04/2021 09:11:16 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:11:16 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:11:16 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4277 
+11/04/2021 09:12:08 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:12:08 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:12:09 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4277 
+11/04/2021 09:12:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:12:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:12:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4277 
+11/04/2021 09:12:51 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:12:51 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:12:52 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4277 
+11/04/2021 09:13:05 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:05 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:06 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4277 
+11/04/2021 09:13:32 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:32 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4277 
+11/04/2021 09:13:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 137 
+11/04/2021 09:13:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:36 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4413 
+11/04/2021 09:13:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4413 
+11/04/2021 09:13:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 137 
+11/04/2021 09:13:48 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:48 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4549 
+11/04/2021 09:13:56 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:56 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4549 
+11/04/2021 09:13:57 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 147 
+11/04/2021 09:13:58 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:13:58 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:13:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4695 
+11/04/2021 09:15:29 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:15:29 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:15:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4695 
+11/04/2021 09:15:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:15:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:15:46 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4695 
+11/04/2021 09:15:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 131 
+11/04/2021 09:15:49 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:15:49 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:15:49 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4695 
+11/04/2021 09:15:53 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:15:53 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:15:54 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4695 
+11/04/2021 09:15:54 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 129 
+11/04/2021 09:15:57 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:15:57 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:15:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4693 
+11/04/2021 09:15:58 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 129 
+11/04/2021 09:15:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:15:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:16:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4693 
+11/04/2021 09:16:15 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:16:15 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:16:16 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4693 
+11/04/2021 09:16:16 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 148 
+11/04/2021 09:16:23 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:16:23 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:16:23 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4840 
+11/04/2021 09:16:23 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 146 
+11/04/2021 09:16:29 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:16:29 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:16:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 4985 
+11/04/2021 09:16:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 137 
+11/04/2021 09:16:38 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:16:38 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:16:38 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5121 
+11/04/2021 09:16:39 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314.json HTTP/1.1" 200 137 
+11/04/2021 09:16:44 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:16:44 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:16:44 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:17:22 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:17:22 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:17:23 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:17:33 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:17:33 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:17:34 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:18:15 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:18:15 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:18:15 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:18:24 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:18:24 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:18:25 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:19:12 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:19:12 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:19:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:20:59 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:20:59 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:21:00 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:21:32 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:21:32 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:21:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:22:17 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:22:17 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:22:18 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:23:29 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:23:29 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:23:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:23:43 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:23:43 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:23:44 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:24:24 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:24:24 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:24:24 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:25:27 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:25:27 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:25:28 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:25:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:25:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:25:36 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:25:41 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:25:41 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:25:42 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:25:58 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:25:58 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:25:59 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:26:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:26:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:26:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:27:07 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:27:07 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:27:08 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:27:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:27:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:27:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:28:16 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:28:16 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:28:17 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:28:32 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:28:32 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:28:33 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:31:13 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:31:13 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:31:14 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:31:34 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:31:34 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:31:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314/321.json HTTP/1.1" 200 129 
+11/04/2021 09:31:46 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:31:46 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:31:47 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:32:44 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:32:44 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:32:45 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:33:06 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:33:06 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:33:06 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314/A.json HTTP/1.1" 200 125 
+11/04/2021 09:33:18 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:33:18 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:33:19 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:34:02 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:34:02 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:34:03 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:34:12 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:34:12 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:34:13 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314/ASD.json HTTP/1.1" 200 130 
+11/04/2021 09:34:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:34:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:34:30 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5257 
+11/04/2021 09:35:30 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:35:30 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:35:31 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "PATCH /igorsantos314/teste6.json HTTP/1.1" 200 385 
+11/04/2021 09:35:35 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:35:35 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:35:35 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5510 
+11/04/2021 09:35:40 PM::DEBUG::Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None) 
+11/04/2021 09:35:40 PM::DEBUG::Starting new HTTPS connection (1): igtec-kanbanboard-default-rtdb.firebaseio.com:443 
+11/04/2021 09:35:40 PM::DEBUG::https://igtec-kanbanboard-default-rtdb.firebaseio.com:443 "GET /igorsantos314.json HTTP/1.1" 200 5510 

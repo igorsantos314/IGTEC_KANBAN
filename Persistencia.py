@@ -56,6 +56,12 @@ class Persistencia:
             return True
         return False
 
+    def existBoard(self, board):
+        #PEGA OS TIPO DO FIREBASE
+        if self.db.child(self.usuario).child(board).get().each():
+            return True
+        return False
+
     def existUsuario(self):
         #PEGA OS TIPO DO FIREBASE
         if self.db.child(self.usuario).get().each():

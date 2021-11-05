@@ -101,6 +101,17 @@ class util:
         except:
             return False
     
+    def getColors(self):
+        return [
+            '#009FE2',
+            '#01963F',
+            '#E6007D',
+            '#F19301',
+            '#612678',
+            '#FEED02',
+            '#FF6347',
+            '#00FFFF'
+        ]
 #print(util().cifrar("13579"))
 """for i in range(50500):
     print(i)
