@@ -18,6 +18,8 @@ class Tela_Quadro:
         self.tituloWindow = "IGTEC - BOARD"
         self.tituloWindowAviso = f" * {self.tituloWindow}"
 
+        self.status_salvar = True
+
         #print(board)
         self.pilha_board = [copy.deepcopy(board)]
         
@@ -33,22 +35,23 @@ class Tela_Quadro:
 
         self.color_theme = 'Black'
         self.color_contrast = 'White'
-        self.dict_color_msg = {"info": "Green", "warning": "DarkOrange", "error": "Red", "wait": "Navy"}
-        self.color_ask = 'SlateBlue'
         
         self.height_window = 532
 
         #CARREGA AS IMAGENS PARA O SISTEMA
         self.setImagensBase64()
 
-        self.current_frame = None
-        self.frame_msg = None
-
-        self.current_setor = None
-        self.new_setor = None
+        #CLASSIFICA A PRIORIDADE
+        self.dict_Prioridade = {
+            'I'  : 0,
+            'II' : 1,
+            'III': 2,
+            'IV' : 3,
+            'V'  : 4
+        }
 
         self.window()
-        
+
     def window(self):
         self.windowQuadro = Tk()
         self.windowQuadro.geometry(util().toCenterScreen(925, 600))
@@ -120,13 +123,31 @@ class Tela_Quadro:
         self.windowQuadro.focus_force()
 
         self.windowQuadro.bind("<F5>", self.atualizarTarefas)
+
         self.windowQuadro.bind("<Control-s>", self.salvar)
+        self.windowQuadro.bind("<Control-S>", self.salvar)
+
         self.windowQuadro.bind("<Control-z>", self.ctrlZ)
+        self.windowQuadro.bind("<Control-Z>", self.ctrlZ)
         
         #FOCAR NA JANELA DE QUADROS
         self.windowQuadro.focus_force()
 
+        #PROTOCOLO PARA DESTRUI JANELA
+        self.windowQuadro.protocol("WM_DELETE_WINDOW", self.on_closing)
+
         self.windowQuadro.mainloop()
+
+    def on_closing(self):
+        #SE USUÁRIO NÃO SALVOU
+        if not self.status_salvar:
+
+            #PERGUNTA PARA  NÃO SAIR SEM SALVAR
+            self.msg.ask(None, "QUADRO NÃO ESTÁ SALVO, VOCÊ QUER REALMENTE SAIR?", self.windowQuadro.destroy)
+
+        else:
+            #FECHAR A TELA
+            self.windowQuadro.destroy()
 
     # -- COLUNAS --
     def atualizarTarefas(self, event):
@@ -354,10 +375,111 @@ class Tela_Quadro:
         lblPrioridade.place(x=20, y=60)
 
         def abrir(event):
-            print(postIt)
             
+            #EXPANDIR O POSTIT
+            self.expandirPostiT(column, postIt)
+
+        #BUSCAR EVENTO EM TODOS OS ELEMENTOS DO POSTIT
         framePostIt.bind("<Button-3>", popup)
+        frFaixa.bind("<Button-3>", popup)
+        lblAtividade.bind("<Button-3>", popup)
+        lblData.bind("<Button-3>", popup)
+        lblPrioridade.bind("<Button-3>", popup)
+
+        #BUSCAR DOUBLE CLICK EM QUALQUER PASTE DO POSTIT
         framePostIt.bind("<Double-Button-1>", abrir)
+        frFaixa.bind("<Double-Button-1>", abrir)
+        lblAtividade.bind("<Double-Button-1>", abrir)
+        lblData.bind("<Double-Button-1>", abrir)
+        lblPrioridade.bind("<Double-Button-1>", abrir)
+
+    def expandirPostiT(self, column, postIt):
+        print(postIt)
+
+        self.framePostItExpanded = Frame(self.windowQuadro, bg=self.color_theme, width=450, height=370)
+        self.framePostItExpanded.pack(pady=120)
+
+        self.framePostItExpanded.grab_set()
+
+        frameFaixa = Frame(self.framePostItExpanded, bg=postIt["Color"], width=15, height=370)
+        frameFaixa.place(x=0, y=0)
+
+        #TITULO
+        lblTitulo = Label(self.framePostItExpanded, text='EDITAR TAREFA', font=self.font_titulo, fg='White', bg=self.color_theme)
+        lblTitulo.place(x=120, y=20)
+
+        #ATIVIDADE
+        lblAtividade = Label(self.framePostItExpanded, text='Atividade:', font=self.font_default_labels, fg='White', bg=self.color_theme)
+        lblAtividade.place(x=20, y=80)
+
+        etAtividade = Entry(self.framePostItExpanded, font=self.font_default_labels, width=40, bd=0, fg=postIt["Color"], bg=self.color_theme)
+        etAtividade.insert(0, postIt['Atividade'])
+        etAtividade.place(x=20, y=110)
+
+        #DATA       
+        lblData = Label(self.framePostItExpanded, text='Data:', font=self.font_default_labels, fg='White', bg=self.color_theme)
+        lblData.place(x=20, y=150)
+
+        etData = Entry(self.framePostItExpanded, font=self.font_default_labels, width=10, bd=0, fg=postIt["Color"], bg=self.color_theme)
+        etData.insert(0, postIt['Data'])
+        etData.place(x=20, y=180)
+
+        #PRIORIDADE
+        lblPrioridade = Label(self.framePostItExpanded, text='Prioridade:', font=self.font_default_labels, fg='White', bg=self.color_theme)
+        lblPrioridade.place(x=140, y=150)
+
+        comboPrioridade = ttk.Combobox(self.framePostItExpanded, font=self.font_default_labels, width=10, state="readonly")
+
+        comboPrioridade['values'] = tuple(
+            ['I', 'II', 'III', 'IV', 'V'])
+        comboPrioridade.current(self.dict_Prioridade[postIt['Prioridade']])
+        comboPrioridade.place(x=140, y=180)
+        
+        #COR
+        lblCor = Label(self.framePostItExpanded, text='Cor da Tarefa:', font=self.font_default_labels, fg='White', bg=self.color_theme)
+        lblCor.place(x=20, y=220)
+
+        #LISTA DE BOTOES
+        self.listaBotoesCores = []
+
+        #CRIAR PALETA DE CORES
+        posX = 20
+        for indice, cor in enumerate(util().getColors()):
+            #CRIA CADA BOTÃO COM A COR 
+            self.createBotaoCor(self.framePostItExpanded, indice, posX, cor)
+
+            #ESPAÇAMENTO DE 50 ENTRE OS BOTOES
+            posX += 50
+
+        def editar():
+            
+            if len(etAtividade.get().replace(" ", "")) > 0:
+
+                self.adicionar(
+                    'To do',
+                    etAtividade.get(),
+                    self.colorTarefa,
+                    etData.get(),
+                    comboPrioridade.get()
+                )
+
+                #FECHA A JANELA
+                fechar()
+
+                #ATUALIZAR CAMPOS
+                self.atualizarTarefas(None)
+        
+        def fechar():
+            self.framePostItExpanded.destroy()
+
+        btSalvar = Button(self.framePostItExpanded, text='Editar', font=self.font_default_labels, fg=self.color_theme, bg=postIt["Color"], bd=0, width=9, command= editar)
+        btSalvar.place(x=20, y=310)
+
+        btFechar = Button(self.framePostItExpanded, text='Fechar', font=self.font_default_labels, fg=self.color_theme, bg=postIt["Color"], bd=0, width=9, command= fechar)
+        btFechar.place(x=130, y=310)
+
+        #FOCAR NO CAMPO DE ATIVIDADE
+        etAtividade.focus_force()
 
     def formatSubtitulo(self, subtitilo):
         #FORMATA A STRING PARA NÃO UTRAPASSAR A QUANTIDADE DE CARACTERES
@@ -366,7 +488,8 @@ class Tela_Quadro:
         return subtitilo
     
     def voltar(self):
-        self.windowQuadro.destroy()
+        #VERIFICAÇÃO ANTES DE SAIR
+        self.on_closing()
 
     def novaTarefa(self):
 
@@ -417,7 +540,7 @@ class Tela_Quadro:
         posX = 10
         for indice, cor in enumerate(util().getColors()):
             #CRIA CADA BOTÃO COM A COR 
-            self.createBotaoCor(indice, posX, cor)
+            self.createBotaoCor(self.frameNovaTarefa, indice, posX, cor)
 
             #ESPAÇAMENTO DE 50 ENTRE OS BOTOES
             posX += 50
@@ -444,15 +567,15 @@ class Tela_Quadro:
             self.frameNovaTarefa.destroy()
 
         btSalvar = Button(self.frameNovaTarefa, text='Adicionar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= adicionar)
-        btSalvar.place(x=10, y=320)
+        btSalvar.place(x=10, y=310)
 
-        btSalvar = Button(self.frameNovaTarefa, text='Fechar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= fechar)
-        btSalvar.place(x=120, y=320)
+        btFechar = Button(self.frameNovaTarefa, text='Fechar', font=self.font_default_labels, fg='White', bg='Black', bd=0, width=9, command= fechar)
+        btFechar.place(x=120, y=310)
 
         #FOCAR NO CAMPO DE ATIVIDADE
         etAtividade.focus_force()
 
-    def createBotaoCor(self, indice, posX, cor):
+    def createBotaoCor(self, frame, indice, posX, cor):
 
         def limparSelecao():
             #LIMPA QUALQUER BOTÃO SELECIONADO
@@ -470,7 +593,7 @@ class Tela_Quadro:
             self.colorTarefa = cor
 
         #BOTAO COM A COR
-        btCor = Button(self.frameNovaTarefa, bg=cor, bd=0, width=5, height=2, command=lambda: selecionarCor())
+        btCor = Button(frame, bg=cor, bd=0, width=5, height=2, command=lambda: selecionarCor())
         btCor.place(x=posX, y=250)
 
         #ADICIONAR O BOTAO DE COR NA LISTA
@@ -480,8 +603,6 @@ class Tela_Quadro:
 
     def getIdPost(self, column_destino):
         ultima_tarefa = self.board[column_destino][-1]
-
-        print(ultima_tarefa)
 
         if ultima_tarefa == 'Nenhum':
             return 1
@@ -515,7 +636,7 @@ class Tela_Quadro:
         #ADICIONAR A ALTERAÇÕES
         self.pilha()
 
-    def salvar(self, event):
+    def salvar(self, event=None):
         #SALVAR ALTERAÇÕES
         Persistencia(self.usuario).salvarAlteracoes(self.board)
 
@@ -523,7 +644,7 @@ class Tela_Quadro:
         self.avisoWindow('Salvo')
 
         #th.start_new_thread(self.msg.destroyMsg, (None,))
-        self.msg.msg("info", "ALTERAÇÕES FORAM SALVAS !")
+        self.msg.msg("info", "ALTERAÇÕES SALVAS !")
 
     def pilha(self):
         #ADICIONAR EVENTO NA PILHA
@@ -549,9 +670,6 @@ class Tela_Quadro:
             #ATUALIZA O QUADRO
             self.atualizarTarefas(None)
 
-            #VOLTOU
-            print("VOLTOU")
-
     def excluirQuadro(self):
 
         #EXCLUI O QUADRO
@@ -566,9 +684,15 @@ class Tela_Quadro:
             #AVISAR QUE AS ALTERAÇÕES NÃO FORAM SALVAS
             self.windowQuadro.title(self.tituloWindowAviso)
 
+            #PENDENTE DE SALVAMENTO
+            self.status_salvar = False
+
         elif event == 'Salvo':
             #RETIRAR AVISO DO TITULO DA JANELA
             self.windowQuadro.title(self.tituloWindow)
+
+            #AVISA QUE ESTÁ SALVO
+            self.status_salvar = True
 
     def setImagensBase64(self):
         self.imagem_menu = 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAABkUlEQVR4nO3awS5DQRTG8W+wrETtxLpWZUsEb8QzEI/gpTSSEu2KrdhhwVL7t2g0chW3qTkj+v22Pcl89yQ393RmJDMzM7MAwAFwBbzy2StwCeyXzpkFsAo8TXjwqkegGZVrIWohSduSVmrUNSXtZM4yFtmARqbamUQ24E9yA0oHKM0NCFzrforau2wpSgGWgE6NOeAcWIrKlaIWkiSgIelQ0pakxcrPA0nXks5SSi+RuczMzOZU6BwgScCGpLYmzwH9lNJNdKYwwCkw/GYKHAInpXNmAWz88PAfm9CKyhX5Z6iteq9ckrSZOctYZAOq7/xv1c7E+wGlA5TmBgSuNchUO5PIBvQlUaMOSb3MWcoATmoMQseRmUqMwi2NvvOTRuFeSuk2OpOZmdmcij4aW5Z0pK+3xHoaHY09R+YKwehw9KLGjlCHwMPRMMBejYd/txuVK/LP0NoUtevZUlR4P6B0gNLcgNIBSotswDTXXv7fFRlGl6Ufa3wCHwi8LB0K2Ae6fH1dvgvslc5pZmZm8+EN6vTRQDQnGnkAAAAASUVORK5CYII='

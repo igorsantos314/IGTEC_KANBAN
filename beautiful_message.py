@@ -43,9 +43,7 @@ class beautiful_message:
             btOk.bind("<Return>", self.destroyMsg)
 
     def ask(self, type, msg, command):
-        
-        print(type)
-        
+
         #CASO JÁ EXISTA UMA MENSAGEM
         if self.frame_msg:
             #APAGA A ATUAL
@@ -74,6 +72,7 @@ class beautiful_message:
             try:
                 #DESTROI O FRAME
                 self.frame_msg.destroy()
+                
             except:
                 pass
 
@@ -92,7 +91,7 @@ class beautiful_message:
         
         #PROCURA O APERTA DO ENTER
         btYes.bind("<Return>", yes)
-
+        
     def destroyMsg(self, event):
         #APAGA A MENSAGEM
         self.frame_msg.destroy()
