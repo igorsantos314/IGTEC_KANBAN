@@ -394,7 +394,9 @@ class Tela_Quadro:
         lblPrioridade.bind("<Double-Button-1>", abrir)
 
     def expandirPostiT(self, column, postIt):
-        print(postIt)
+        
+        #ATRIBUI A COR ATUAL DA TAREFA
+        self.colorTarefa = postIt["Color"]
 
         self.framePostItExpanded = Frame(self.windowQuadro, bg=self.color_theme, width=450, height=370)
         self.framePostItExpanded.pack(pady=120)
@@ -412,7 +414,7 @@ class Tela_Quadro:
         lblAtividade = Label(self.framePostItExpanded, text='Atividade:', font=self.font_default_labels, fg='White', bg=self.color_theme)
         lblAtividade.place(x=20, y=80)
 
-        etAtividade = Entry(self.framePostItExpanded, font=self.font_default_labels, width=40, bd=0, fg=postIt["Color"], bg=self.color_theme)
+        etAtividade = Entry(self.framePostItExpanded, font=self.font_default_labels, insertbackground=postIt["Color"], width=40, bd=0, fg=postIt["Color"], bg=self.color_theme)
         etAtividade.insert(0, postIt['Atividade'])
         etAtividade.place(x=20, y=110)
 
@@ -420,7 +422,7 @@ class Tela_Quadro:
         lblData = Label(self.framePostItExpanded, text='Data:', font=self.font_default_labels, fg='White', bg=self.color_theme)
         lblData.place(x=20, y=150)
 
-        etData = Entry(self.framePostItExpanded, font=self.font_default_labels, width=10, bd=0, fg=postIt["Color"], bg=self.color_theme)
+        etData = Entry(self.framePostItExpanded, font=self.font_default_labels, insertbackground=postIt["Color"], width=10, bd=0, fg=postIt["Color"], bg=self.color_theme)
         etData.insert(0, postIt['Data'])
         etData.place(x=20, y=180)
 
@@ -455,8 +457,9 @@ class Tela_Quadro:
             
             if len(etAtividade.get().replace(" ", "")) > 0:
 
-                self.adicionar(
-                    'To do',
+                self.editar(
+                    postIt['Id'],
+                    column,
                     etAtividade.get(),
                     self.colorTarefa,
                     etData.get(),
@@ -636,6 +639,20 @@ class Tela_Quadro:
         #ADICIONAR A ALTERAÇÕES
         self.pilha()
 
+    def editar(self, id, column, atividade, color, data, prioridade):
+        #ADICIONAR TAREFA NO BOARD
+        self.board[column][id] = {
+                "Id":id,
+                "Atividade":atividade,
+                "Color":color,
+                "Data":data,
+                "Prioridade":prioridade               
+            }
+        
+
+        #ADICIONAR A ALTERAÇÕES
+        self.pilha()
+    
     def salvar(self, event=None):
         #SALVAR ALTERAÇÕES
         Persistencia(self.usuario).salvarAlteracoes(self.board)
