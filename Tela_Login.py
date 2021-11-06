@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import font
 from Persistencia import Persistencia
 from Tela_Home import Tela_Home
+from Tela_Novo_Usuario import Tela_Novo_Usuario
 from beautiful_message import beautiful_message
 from util import util
 
@@ -48,10 +49,10 @@ class Tela_Login:
         btEntrar = Button(self.windowLogin, text='Entrar', font=self.font_menu, bd=0, fg='White', bg='DodgerBlue', width=20, command=lambda: login())
         btEntrar.place(x=posX, y=290)
 
-        btNovoUsuario = Button(self.windowLogin, text='Novo Usuário', font=self.font_menu, bd=0, fg='White', bg='DeepSkyBlue', width=20)
+        btNovoUsuario = Button(self.windowLogin, text='Novo Usuário', font=self.font_menu, bd=0, fg='White', bg='DeepSkyBlue', width=20, command=lambda: novoUsuario())
         btNovoUsuario.place(x=posX, y=330)
 
-        def login():
+        def login(event=None):
             
             usuario = etUsuario.get()
             senha = etSenha.get()
@@ -68,9 +69,22 @@ class Tela_Login:
             else:
                 self.msg.msg("error", "Senha ou Usuário Incorretos !")
         
+        def novoUsuario():
+            #FECHAR A TELA
+            self.windowLogin.destroy()
+
+            #ABRE TELA DE NOVO USUÁRIO
+            Tela_Novo_Usuario()
+
+            #REABREA A TELA DE LOGIN
+            Tela_Login()
+
         #FOCAR NO CAMPO DE USUÁRIO
         etUsuario.focus_force()
         
+        #APERTA NA SENHA
+        etSenha.bind("<Return>", login)
+
         self.windowLogin.mainloop()
 
-Tela_Login()
+#Tela_Login()

@@ -83,7 +83,11 @@ class Tela_Quadro:
         
         #MENU POPUP
         self.menuPopup = Menu(self.windowQuadro, font=self.font_default, fg='Black', bg='White', bd=0, tearoff=0)
-        self.menuPopup.add_command(label="Novo Atividade", command=lambda: self.novaTarefa())
+        self.menuPopup.add_command(label="Nova Atividade", command=lambda: self.novaTarefa())
+        self.menuPopup.add_command(label="Salvar", command=lambda: self.salvar())
+        self.menuPopup.add_separator()
+        self.menuPopup.add_command(label="Importar", command='lambda: self.salvar()')
+        self.menuPopup.add_command(label="Exportar", command='lambda: self.salvar()')
         self.menuPopup.add_separator()
         self.menuPopup.add_command(label="Excluir Quadro", command=lambda: th.start_new_thread(self.msg.ask, (None, "APAGAR QUADRO ?", self.excluirQuadro)))
         self.menuPopup.add_separator()
@@ -139,6 +143,10 @@ class Tela_Quadro:
         self.windowQuadro.mainloop()
 
     def on_closing(self):
+        
+        #TENTA FECHAR AS TELAS ABERTAS
+        self.closeWindows()
+
         #SE USUÁRIO NÃO SALVOU
         if not self.status_salvar:
 
@@ -148,6 +156,20 @@ class Tela_Quadro:
         else:
             #FECHAR A TELA
             self.windowQuadro.destroy()
+
+    def closeWindows(self):
+    
+        #FECHA O POSIT ABERTO
+        try:
+            self.framePostItExpanded.destroy()
+        except:
+            pass
+            
+        #FECHA A TELA DE NOVA TAREFA
+        try:
+            self.frameNovaTarefa.destroy()
+        except:
+            pass
 
     # -- COLUNAS --
     def atualizarTarefas(self, event):
@@ -358,8 +380,6 @@ class Tela_Quadro:
             menuPopup.add_command(label="Done", command=lambda: self.movePostIt(column, postIt, 'Done'))
 
         menuPopup.add_separator()
-
-        menuPopup.add_command(label="Editar", command=lambda: print(postIt))
         menuPopup.add_command(label="Excluir", command=lambda: self.excluirPostIt(column, postIt, ))
 
         frFaixa = Frame(framePostIt, height=90, width=10, bg=postIt['Color'])

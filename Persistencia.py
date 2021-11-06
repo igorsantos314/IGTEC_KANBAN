@@ -79,7 +79,7 @@ class Persistencia:
                         "Senha": util().cifrar(senha)
                     }
             }
-
+            
             self.db.child(self.usuario).set(
                 data_user
             )
@@ -99,7 +99,6 @@ class Persistencia:
                 }
 
         if not self.existUsuario():
-            print("Cliente não existe")
             data_board = {
                 self.usuario: data_board_main
             }

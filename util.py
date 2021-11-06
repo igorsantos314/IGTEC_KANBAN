@@ -8,8 +8,9 @@ class util:
 
     def __init__(self) -> None:
         #SETA AS CONFIGURAÇÕES DE LOG
-        logging.basicConfig(filename='log.log', filemode='a', level=logging.DEBUG, format='%(asctime)s::%(levelname)s::%(message)s ', datefmt='%m/%d/%Y %I:%M:%S %p')
-
+        #logging.basicConfig(filename='log.log', filemode='a', level=logging.DEBUG, format='%(asctime)s::%(levelname)s::%(message)s ', datefmt='%m/%d/%Y %I:%M:%S %p')
+        pass
+    
     def toCenterScreen(self, width, height):
 
         root = tk.Tk()
