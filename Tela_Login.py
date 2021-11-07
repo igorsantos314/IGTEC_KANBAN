@@ -23,7 +23,7 @@ class Tela_Login:
         self.windowLogin = Tk()
         self.windowLogin.title("IGTEC - Login")
         self.windowLogin['bg'] = 'White'
-        self.windowLogin.geometry(util().toCenterScreen(350, 400))
+        self.windowLogin.geometry(util().toCenterScreen(350, 380))
 
         #OBJETO DE MESAGENS
         self.msg = beautiful_message(self.windowLogin)
@@ -47,11 +47,8 @@ class Tela_Login:
         etSenha.place(x=posX, y=220)
 
         btEntrar = Button(self.windowLogin, text='Entrar', font=self.font_menu, bd=0, fg='White', bg='DodgerBlue', width=20, command=lambda: login())
-        btEntrar.place(x=posX, y=290)
-
-        btNovoUsuario = Button(self.windowLogin, text='Novo Usuário', font=self.font_menu, bd=0, fg='White', bg='DeepSkyBlue', width=20, command=lambda: novoUsuario())
-        btNovoUsuario.place(x=posX, y=330)
-
+        btEntrar.place(x=posX, y=300)
+        
         def login(event=None):
             
             usuario = etUsuario.get()
@@ -68,16 +65,6 @@ class Tela_Login:
             
             else:
                 self.msg.msg("error", "Senha ou Usuário Incorretos !")
-        
-        def novoUsuario():
-            #FECHAR A TELA
-            self.windowLogin.destroy()
-
-            #ABRE TELA DE NOVO USUÁRIO
-            Tela_Novo_Usuario()
-
-            #REABREA A TELA DE LOGIN
-            Tela_Login()
 
         #FOCAR NO CAMPO DE USUÁRIO
         etUsuario.focus_force()

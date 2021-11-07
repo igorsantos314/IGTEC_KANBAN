@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import font
 from Persistencia import Persistencia
-from Tela_Home import Tela_Home
 from beautiful_message import beautiful_message
 from util import util
 

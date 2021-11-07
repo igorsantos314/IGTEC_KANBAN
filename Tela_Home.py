@@ -7,6 +7,7 @@ from typing import List
 from Persistencia import Persistencia
 from Tela_Novo_Quadro import Tela_Novo_Quadro
 from Tela_Quadro import Tela_Quadro
+from Tela_Novo_Usuario import Tela_Novo_Usuario
 from beautiful_message import beautiful_message
 from util import util
 import _thread as th
@@ -75,6 +76,11 @@ class Tela_Home:
         self.menuPopup = Menu(self.windowMain, font=self.font_default, fg='Black', bg='White', bd=0, tearoff=0)
         self.menuPopup.add_command(label="Novo Quadro", command=lambda: self.novoQuadro())
         self.menuPopup.add_command(label="Novo Quadro Compartilhado", command=lambda: 'imprimir(None)')
+        
+        if self.usuario == 'Administrador':
+            self.menuPopup.add_separator()
+            self.menuPopup.add_command(label="Novo Usuário", command=lambda: self.novoUsuario())
+
         self.menuPopup.add_separator()
         self.menuPopup.add_command(label="Sair", command=lambda: self.windowMain.destroy())
         
@@ -124,6 +130,16 @@ class Tela_Home:
         self.windowMain.focus_force()
 
         self.windowMain.mainloop()
+
+    def novoUsuario(self):
+        #FECHAR A TELA
+        self.windowMain.destroy()
+
+        #ABRE TELA DE NOVO USUÁRIO
+        Tela_Novo_Usuario()
+
+        #REABREA A TELA DE LOGIN
+        Tela_Home(self.usuario)
 
     def novoQuadro(self):
         #FECHAR JANELA
